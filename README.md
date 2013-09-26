@@ -2,6 +2,14 @@
 
 The idea of this repo is to make it really easy for me to get my vim/bash setup really quickly on a new machine.
 
+#Install
+``` bash
+git clone https://github.com/AshyIsMe/dotrc
+cd dotrc
+bash install.sh
+```
+
+
 ##Vim
 Currently this is using Vundle with the following list of plugins.
 See the VimCheatSheet.md file in this repo for commands relating to each.
