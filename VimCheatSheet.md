@@ -4,10 +4,15 @@
 
 #Walt's awesome
 dib yib dab yab
+
 t T - non inclusive f F
+
 ci" - change within "
+
 di" - delete within "
+
 da" - delete within " including "
+
 ca" - change within " including "
 
 Read this: http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
