@@ -2,6 +2,14 @@
 
 #(Ignore the Janus rebinds for now. I left them in there in case I want to rebind them later on.)
 
+#Walt's awesome
+dib yib dab yab
+t T - non inclusive f F
+ci" - change within "
+di" - delete within "
+da" - delete within " including "
+ca" - change within " including "
+
 ## [Ack.vim](http://github.com/mileszs/ack.vim)
 
 Ack.vim uses ack to search inside the current directory for a pattern.
