@@ -16,6 +16,9 @@ ln -s `pwd`/vimrc `echo ~`/.vimrc
 ln -s `pwd`/dotvim `echo ~`/.vim
 
 #Install vundle 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if [ ! -d ~/.vim/bundle/vundle ]
+then
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
 
 vim +BundleInstall +qall
