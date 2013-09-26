@@ -10,6 +10,8 @@ di" - delete within "
 da" - delete within " including "
 ca" - change within " including "
 
+Read this: http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
+
 ## [Ack.vim](http://github.com/mileszs/ack.vim)
 
 Ack.vim uses ack to search inside the current directory for a pattern.
