@@ -27,9 +27,11 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'joonty/vdebug' 	" Gonna need this one later
 Bundle 'Yggdroot/indentLine'
 " vim-scripts repos
 Bundle 'L9'
+Bundle 'Markdown'
 
 filetype plugin indent on     " required!
 "
@@ -49,7 +51,9 @@ set tabstop=2
 map <F4> :nohl<CR>
 map <Leader>cd :lcd %:p:h<CR>
 
-colorscheme railscasts
+"colorscheme railscasts
 syntax enable
 
 source ~/.vim/DropboxPaste.vim
+
+set hlsearch
