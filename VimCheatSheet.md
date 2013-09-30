@@ -17,6 +17,10 @@ ca" - change within " including "
 
 Read this: http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
 
+###He's still awesome:
+:tabnew
+gt - to swap between tabs
+
 ## [Ack.vim](http://github.com/mileszs/ack.vim)
 
 Ack.vim uses ack to search inside the current directory for a pattern.

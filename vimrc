@@ -55,6 +55,9 @@ set expandtab
 map <F4> :nohl<CR>
 map <Leader>cd :lcd %:p:h<CR>
 
+"AA TODO: this doesn't seem to work correctly.
+map <C>t :CtrlPBufTag<CR>
+
 "colorscheme railscasts
 syntax enable
 
