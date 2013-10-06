@@ -21,7 +21,10 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
-"Bundle 'garbas/vim-snipmate'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/ZoomWin'
