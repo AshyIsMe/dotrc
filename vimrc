@@ -60,6 +60,8 @@ map <Leader>cd :lcd %:p:h<CR>
 map <c-t> :CtrlPBufTag<CR>
 let mapleader = ","
 
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
 "colorscheme railscasts
 syntax enable
 
