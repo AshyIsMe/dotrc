@@ -54,6 +54,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set ignorecase
 
 map <F4> :nohl<CR>
 map <Leader>cd :lcd %:p:h<CR>
