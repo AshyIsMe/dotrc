@@ -2,6 +2,9 @@
 
 #(Ignore the Janus rebinds for now. I left them in there in case I want to rebind them later on.)
 
+#Random tips
+signs are cool: http://vimdoc.sourceforge.net/htmldoc/sign.html 
+
 #Walt's awesome
 dib yib dab yab
 
