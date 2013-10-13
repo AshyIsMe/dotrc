@@ -35,6 +35,8 @@ Bundle 'Yggdroot/indentLine'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'Markdown'
+"Bundle 'laurilehmijoki/haskellmode-vim'
+Bundle 'dag/vim2hs'
 
 filetype plugin indent on     " required!
 "
@@ -64,8 +66,14 @@ let mapleader = ","
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 "colorscheme railscasts
+"colorscheme github
 syntax enable
+let &t_Co=256
 
 source ~/.vim/DropboxPaste.vim
 
 set hlsearch
+
+"haskell browser for haskell_doc.vim
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
