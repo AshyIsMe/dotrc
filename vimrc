@@ -35,6 +35,7 @@ Bundle 'Yggdroot/indentLine'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'Markdown'
+Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
 "Bundle 'laurilehmijoki/haskellmode-vim'
 Bundle 'dag/vim2hs'
 
