@@ -66,6 +66,8 @@ let mapleader = ","
 
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+:nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
+
 "colorscheme railscasts
 "colorscheme github
 syntax enable
