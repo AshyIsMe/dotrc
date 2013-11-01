@@ -5,6 +5,10 @@
 #Random tips
 signs are cool: http://vimdoc.sourceforge.net/htmldoc/sign.html 
 
+Jump back to previous Insert mode position:
+gi   - Lands you there in insert mode
+`^   - Lands you there in normal mode
+
 #Walt's awesome
 dib yib dab yab
 
