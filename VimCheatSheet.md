@@ -5,6 +5,15 @@
 #Random tips
 signs are cool: http://vimdoc.sourceforge.net/htmldoc/sign.html 
 
+Jump back to previous Insert mode position:
+- gi   - Lands you there in insert mode
+- `^   - Lands you there in normal mode
+ 
+Visually select the current paragraph:
+- vip    - example: https://raw.github.com/junegunn/i/master/vim-easy-align.gif
+
+
+
 #Walt's awesome
 dib yib dab yab
 
