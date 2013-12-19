@@ -38,6 +38,7 @@ Bundle 'Markdown'
 Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
 "Bundle 'laurilehmijoki/haskellmode-vim'
 Bundle 'dag/vim2hs'
+Bundle 'Conque-Shell'
 
 filetype plugin indent on     " required!
 "
@@ -67,6 +68,17 @@ let mapleader = ","
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 :nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
+
+:nnoremap <Leader>n :tabnew<CR>
+
+"Fugitive git shortcuts
+:nnoremap <Leader>gs :Gstatus<CR>
+:nnoremap <Leader>gc :Gcommit<CR>
+:nnoremap <Leader>gb :Gblame<CR>
+"browse in github or instaweb
+:nnoremap <Leader>gg :Gbrowse<CR>
+
+:nnoremap <Leader>v :e ~/.vimrc<CR>
 
 "colorscheme railscasts
 "colorscheme github
