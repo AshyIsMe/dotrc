@@ -77,6 +77,9 @@ let mapleader = ","
 :nnoremap <Leader>gb :Gblame<CR>
 "browse in github or instaweb
 :nnoremap <Leader>gg :Gbrowse<CR>
+:nnoremap <Leader>gd :Gdiff<CR>
+:nnoremap <Leader>gm :Gmove<CR>
+:nnoremap <Leader>gp :Git push
 
 :nnoremap <Leader>v :e ~/.vimrc<CR>
 
