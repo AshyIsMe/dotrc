@@ -60,11 +60,15 @@ set shiftwidth=2
 set expandtab
 set ignorecase
 
+let mapleader = " "
+map ; :
+noremap ;; ;
+
 map <F4> :nohl<CR>
 map <Leader>cd :lcd %:p:h<CR>
 map <c-t> :CtrlPBufTag<CR>
-let mapleader = ","
 
+" global replace current word
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 :nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
@@ -81,7 +85,7 @@ let mapleader = ","
 :nnoremap <Leader>gm :Gmove<CR>
 :nnoremap <Leader>gp :Git push
 
-:nnoremap <Leader>v :e ~/.vimrc<CR>
+:nnoremap <Leader>ev :e ~/.vimrc<CR>
 
 "colorscheme railscasts
 "colorscheme github
