@@ -52,12 +52,12 @@ call arpeggio#load()
 Arpeggio inoremap uh <Esc>
 Arpeggio cnoremap uh <c-u><Esc>
 inoremap <esc> <nop>
-Arpeggio lnoremap eu (
-Arpeggio lnoremap ht )
-Arpeggio lnoremap .p [
-Arpeggio lnoremap cg ]
-Arpeggio lnoremap jk {
-Arpeggio lnoremap mw }
+Arpeggio nnoremap eu (
+Arpeggio nnoremap ht )
+Arpeggio nnoremap .p [
+Arpeggio nnoremap cg ]
+Arpeggio nnoremap jk {
+Arpeggio nnoremap mw }
 Arpeggio inoremap eu (
 Arpeggio inoremap ht )
 Arpeggio inoremap .p [
