@@ -137,5 +137,5 @@ set statusline+=%=
 "set statusline+=/
 "set statusline+=%-6L
 set statusline+=Stickies:
-let stickiescount=system("wc -l < ~/dotrc/vimstickynotes.md | tr -d ' '")
+let stickiescount=system("wc -l < ~/dotrc/vimstickynotes.md | tr -d ' \n'")
 set statusline+=%{stickiescount}
