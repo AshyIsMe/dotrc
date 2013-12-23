@@ -85,7 +85,8 @@ map <c-t> :CtrlPBufTag<CR>
 :nnoremap <Leader>gm :Gmove<CR>
 :nnoremap <Leader>gp :Git push
 
-:nnoremap <Leader>ev :e ~/.vimrc<CR>
+":nnoremap <Leader>ev :e ~/.vimrc<CR>
+:nnoremap <Leader>ev :e ~/dotrc/vimrc<CR>
 
 "colorscheme railscasts
 "colorscheme github
