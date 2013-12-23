@@ -128,3 +128,14 @@ set hlsearch
 "haskell browser for haskell_doc.vim
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
+
+"statusline setting
+set statusline=%f
+set statusline+=%m
+set statusline+=%=
+"set statusline+=%l
+"set statusline+=/
+"set statusline+=%-6L
+set statusline+=Stickies:
+let stickiescount=system("wc -l < ~/dotrc/vimstickynotes.md | tr -d ' '")
+set statusline+=%{stickiescount}
