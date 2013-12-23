@@ -40,6 +40,31 @@ Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
 Bundle 'dag/vim2hs'
 Bundle 'Conque-Shell'
 
+"Arpeggio
+Bundle 'kana/vim-arpeggio'
+call arpeggio#load()
+"Arpeggio inoremap eu <Esc>
+"Arpeggio cnoremap eu <c-u><Esc>
+"inoremap <esc> <nop>
+"Arpeggio nnoremap eu (
+"Arpeggio nnoremap ht )
+
+Arpeggio inoremap uh <Esc>
+Arpeggio cnoremap uh <c-u><Esc>
+inoremap <esc> <nop>
+Arpeggio lnoremap eu (
+Arpeggio lnoremap ht )
+Arpeggio lnoremap .p [
+Arpeggio lnoremap cg ]
+Arpeggio lnoremap jk {
+Arpeggio lnoremap mw }
+Arpeggio inoremap eu (
+Arpeggio inoremap ht )
+Arpeggio inoremap .p [
+Arpeggio inoremap cg ]
+Arpeggio inoremap jk {
+Arpeggio inoremap mw }
+
 filetype plugin indent on     " required!
 "
 " Brief help
@@ -85,8 +110,11 @@ map <c-t> :CtrlPBufTag<CR>
 :nnoremap <Leader>gm :Gmove<CR>
 :nnoremap <Leader>gp :Git push
 
-":nnoremap <Leader>ev :e ~/.vimrc<CR>
+"Quick edit file list
 :nnoremap <Leader>ev :e ~/dotrc/vimrc<CR>
+:nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
+:nnoremap <Leader>es :e ~/dotrc/vimstickynotes.md<CR>
+:nnoremap <Leader>ea :e ~/dotrc/vimannoyances.md<CR>
 
 "colorscheme railscasts
 "colorscheme github
