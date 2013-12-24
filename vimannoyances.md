@@ -5,3 +5,4 @@ Things I need to figure out:
 * Add some useful abbreviations with iabbrev
 * Haskell step debugging
 * Haskell hoogle lookups. Compare haskellmode to vim2hs
+* Auto git checkin for vimannoyances.md and vimstickies.md on save event
