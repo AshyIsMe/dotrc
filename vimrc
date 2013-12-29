@@ -34,11 +34,12 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Yggdroot/indentLine'
 " vim-scripts repos
 Bundle 'L9'
-Bundle 'Markdown'
+"Bundle 'Markdown'
 Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
 "Bundle 'laurilehmijoki/haskellmode-vim'
 Bundle 'dag/vim2hs'
 Bundle 'Conque-Shell'
+Bundle 'jtratner/vim-flavored-markdown'
 
 "Arpeggio
 Bundle 'kana/vim-arpeggio'
@@ -51,15 +52,16 @@ call arpeggio#load()
 
 Arpeggio inoremap uh <Esc>
 Arpeggio cnoremap uh <c-u><Esc>
+Arpeggio nnoremap uh <Esc>
 inoremap <esc> <nop>
-Arpeggio nnoremap eu (
-Arpeggio nnoremap ht )
+"Arpeggio nnoremap eu (
+"Arpeggio nnoremap ht )
 Arpeggio nnoremap .p [
 Arpeggio nnoremap cg ]
 Arpeggio nnoremap jk {
 Arpeggio nnoremap mw }
-Arpeggio inoremap eu (
-Arpeggio inoremap ht )
+"Arpeggio inoremap eu (
+"Arpeggio inoremap ht )
 Arpeggio inoremap .p [
 Arpeggio inoremap cg ]
 Arpeggio inoremap jk {
@@ -118,6 +120,7 @@ map <c-t> :CtrlPBufTag<CR>
 
 "colorscheme railscasts
 "colorscheme github
+colorscheme zenburn
 syntax enable
 let &t_Co=256
 
