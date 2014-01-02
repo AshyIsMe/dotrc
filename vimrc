@@ -40,6 +40,7 @@ Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
 Bundle 'dag/vim2hs'
 Bundle 'Conque-Shell'
 Bundle 'jtratner/vim-flavored-markdown'
+Bundle 'airblade/vim-gitgutter'
 
 "Arpeggio
 Bundle 'kana/vim-arpeggio'
@@ -93,7 +94,10 @@ noremap ;; ;
 
 map <F4> :nohl<CR>
 map <Leader>cd :lcd %:p:h<CR>
-map <c-t> :CtrlPBufTag<CR>
+
+:nnoremap <c-p><c-p> :CtrlP<CR>
+:nnoremap <c-p><c-b> :CtrlPBuffer<CR>
+:nnoremap <c-p><c-t> :CtrlPBufTag<CR>
 
 " global replace current word
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
@@ -132,6 +136,9 @@ set hlsearch
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
+"AA TODO: put this random line in the statusline:
+" grep "*" vimstickynotes.md | head -$((${RANDOM} % `grep "*" vimstickynotes.md | wc -l` + 1)) | tail -1
+
 "statusline setting
 set statusline=%f
 set statusline+=%m
@@ -140,5 +147,6 @@ set statusline+=%=
 "set statusline+=/
 "set statusline+=%-6L
 set statusline+=Stickies:
-let stickiescount=system("wc -l < ~/dotrc/vimstickynotes.md | tr -d ' \n'")
+"let stickiescount=system("wc -l < ~/dotrc/vimstickynotes.md | tr -d ' \n'")
+let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
 set statusline+=%{stickiescount}
