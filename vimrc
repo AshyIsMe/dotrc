@@ -121,6 +121,7 @@ map <Leader>cd :lcd %:p:h<CR>
 :nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
 :nnoremap <Leader>es :e ~/dotrc/vimstickynotes.md<CR>
 :nnoremap <Leader>ea :e ~/dotrc/vimannoyances.md<CR>
+:nnoremap <Leader>ep :e ~/dotrc/projects.md<CR>
 
 "colorscheme railscasts
 "colorscheme github
