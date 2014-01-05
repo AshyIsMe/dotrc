@@ -137,17 +137,23 @@ set hlsearch
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
-"AA TODO: put this random line in the statusline:
-" grep "*" vimstickynotes.md | head -$((${RANDOM} % `grep "*" vimstickynotes.md | wc -l` + 1)) | tail -1
+function CustomStatusLine()
+  "statusline setting
+  set statusline=%f
+  set statusline+=%m
+  let randomsticky=" | Random Sticky: " . system("grep \"*\" ~/dotrc/vimstickynotes.md | head -$((${RANDOM} % `grep \"*\" ~/dotrc/vimstickynotes.md | wc -l` + 1)) | tail -1 | tr -d '*\n'")
+  set statusline+=%{randomsticky}
+  set statusline+=%=
+  "set statusline+=%l
+  "set statusline+=/
+  "set statusline+=%-6L
+  set statusline+=Stickies:
+  "let stickiescount=system("wc -l < ~/dotrc/vimstickynotes.md | tr -d ' \n'")
+  let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
+  set statusline+=%{stickiescount}
+endfunction
 
-"statusline setting
-set statusline=%f
-set statusline+=%m
-set statusline+=%=
-"set statusline+=%l
-"set statusline+=/
-"set statusline+=%-6L
-set statusline+=Stickies:
-"let stickiescount=system("wc -l < ~/dotrc/vimstickynotes.md | tr -d ' \n'")
-let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
-set statusline+=%{stickiescount}
+
+call CustomStatusLine()
+
+
