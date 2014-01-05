@@ -137,7 +137,7 @@ set hlsearch
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
-function CustomStatusLine()
+function! CustomStatusLine()
   "statusline setting
   set statusline=%f
   set statusline+=%m
