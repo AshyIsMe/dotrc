@@ -2,7 +2,8 @@
 
 Things I need to figure out:
 
-* statusline with a random line from vimstickynotes.md
+* http://www.vim.org/scripts/script.php?script_id=3037 - vim-indent-object indent based text-objects
+* Go vimrc mining here: http://amix.dk/vim/vimrc.html
 * https://github.com/airblade/vim-gitgutter
 * Does CtrlP have a feature for currently open buffers?
 * Arpeggios don't work in replace mode currently. 

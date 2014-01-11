@@ -31,7 +31,7 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'joonty/vdebug' 	" Gonna need this one later
-Bundle 'Yggdroot/indentLine'
+"Bundle 'Yggdroot/indentLine'
 " vim-scripts repos
 Bundle 'L9'
 "Bundle 'Markdown'
@@ -41,6 +41,12 @@ Bundle 'dag/vim2hs'
 Bundle 'Conque-Shell'
 Bundle 'jtratner/vim-flavored-markdown'
 Bundle 'airblade/vim-gitgutter'
+"Bundle 'itchyny/calendar.vim'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kana/vim-textobj-indent'
+Bundle 'cecutil'
 
 "Arpeggio
 Bundle 'kana/vim-arpeggio'
@@ -123,6 +129,10 @@ map <Leader>cd :lcd %:p:h<CR>
 :nnoremap <Leader>ea :e ~/dotrc/vimannoyances.md<CR>
 :nnoremap <Leader>ep :e ~/dotrc/projects.md<CR>
 
+"Haskell bindings
+"AA TODO: make this only valid for filetype=haskell
+:nnoremap <Leader>ht :GhcModType<CR>
+
 "colorscheme railscasts
 "colorscheme github
 colorscheme zenburn
@@ -137,23 +147,23 @@ set hlsearch
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
-function! CustomStatusLine()
-  "statusline setting
-  set statusline=%f
-  set statusline+=%m
+"statusline setting
+set statusline=%f
+set statusline+=%m
+"set statusline+=%{RandomStickyLine()}
+set statusline+=%=
+set statusline+=Stickies:
+let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
+set statusline+=%{stickiescount}
+
+function! RandomStickyLine()
   let randomsticky=" | Random Sticky: " . system("grep \"*\" ~/dotrc/vimstickynotes.md | head -$((${RANDOM} % `grep \"*\" ~/dotrc/vimstickynotes.md | wc -l` + 1)) | tail -1 | tr -d '*\n'")
-  set statusline+=%{randomsticky}
-  set statusline+=%=
-  "set statusline+=%l
-  "set statusline+=/
-  "set statusline+=%-6L
-  set statusline+=Stickies:
-  "let stickiescount=system("wc -l < ~/dotrc/vimstickynotes.md | tr -d ' \n'")
-  let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
-  set statusline+=%{stickiescount}
+  return randomsticky
 endfunction
 
+set laststatus=2
 
-call CustomStatusLine()
+nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+
 
 
