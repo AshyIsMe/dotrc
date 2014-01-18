@@ -1,20 +1,23 @@
-
-
 set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Section: Plugins
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
-Bundle 'mileszs/ack.vim'
+" Essential plugins:
+Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
+" vim-buffalo requires vimple
+Bundle 'dahu/vimple'
+Bundle 'Raimondi/vim-buffalo'
+
+" Plugins to explore and remove:
+Bundle 'mileszs/ack.vim'
 Bundle 'ddollar/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-unimpaired'
@@ -26,9 +29,8 @@ Bundle "tomtom/tlib_vim"
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/ZoomWin'
-Bundle 'jeetsukumaran/vim-buffergator'
+"Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'joonty/vdebug' 	" Gonna need this one later
 "Bundle 'Yggdroot/indentLine'
@@ -47,35 +49,10 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'cecutil'
-
 "Arpeggio
 Bundle 'kana/vim-arpeggio'
 call arpeggio#load()
-"Arpeggio inoremap eu <Esc>
-"Arpeggio cnoremap eu <c-u><Esc>
-"inoremap <esc> <nop>
-"Arpeggio nnoremap eu (
-"Arpeggio nnoremap ht )
 
-Arpeggio inoremap uh <Esc>
-Arpeggio cnoremap uh <c-u><Esc>
-Arpeggio nnoremap uh <Esc>
-inoremap <esc> <nop>
-"Arpeggio nnoremap eu (
-"Arpeggio nnoremap ht )
-Arpeggio nnoremap .p [
-Arpeggio nnoremap cg ]
-Arpeggio nnoremap jk {
-Arpeggio nnoremap mw }
-"Arpeggio inoremap eu (
-"Arpeggio inoremap ht )
-Arpeggio inoremap .p [
-Arpeggio inoremap cg ]
-Arpeggio inoremap jk {
-Arpeggio inoremap mw }
-
-filetype plugin indent on     " required!
-"
 " Brief help
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
@@ -85,67 +62,23 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 
+filetype plugin indent on     " required!
 
 
+" Section: Settings
+"
 set relativenumber
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
 set ignorecase
-
-let mapleader = " "
-map ; :
-noremap ;; ;
-
-map <F4> :nohl<CR>
-map <Leader>cd :lcd %:p:h<CR>
-
-:nnoremap <c-p><c-p> :CtrlP<CR>
-:nnoremap <c-p><c-b> :CtrlPBuffer<CR>
-:nnoremap <c-p><c-t> :CtrlPBufTag<CR>
-
-" global replace current word
-:nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
-
-:nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
-
-:nnoremap <Leader>n :tabnew<CR>
-
-"Fugitive git shortcuts
-:nnoremap <Leader>gs :Gstatus<CR>
-:nnoremap <Leader>gc :Gcommit<CR>
-:nnoremap <Leader>gb :Gblame<CR>
-"browse in github or instaweb
-:nnoremap <Leader>gg :Gbrowse<CR>
-:nnoremap <Leader>gd :Gdiff<CR>
-:nnoremap <Leader>gm :Gmove<CR>
-:nnoremap <Leader>gp :Git push
-
-"Quick edit file list
-:nnoremap <Leader>ev :e ~/dotrc/vimrc<CR>
-:nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
-:nnoremap <Leader>es :e ~/dotrc/vimstickynotes.md<CR>
-:nnoremap <Leader>ea :e ~/dotrc/vimannoyances.md<CR>
-:nnoremap <Leader>ep :e ~/dotrc/projects.md<CR>
-
-"Haskell bindings
-"AA TODO: make this only valid for filetype=haskell
-:nnoremap <Leader>ht :GhcModType<CR>
-
 "colorscheme railscasts
 "colorscheme github
 colorscheme zenburn
 syntax enable
 let &t_Co=256
-
-source ~/.vim/DropboxPaste.vim
-
 set hlsearch
-
-"haskell browser for haskell_doc.vim
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s %s"
 
 "statusline setting
 set statusline=%f
@@ -162,6 +95,65 @@ function! RandomStickyLine()
 endfunction
 
 set laststatus=2
+
+
+" Section: Mappings
+"
+Arpeggio nnoremap jk {
+Arpeggio nnoremap mw }
+Arpeggio inoremap .p [
+Arpeggio inoremap cg ]
+Arpeggio inoremap jk {
+Arpeggio inoremap mw }
+
+let mapleader = " "
+map ; :
+noremap ;; ;
+
+map <F4> :nohl<CR>
+nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
+map <Leader>cd :lcd %:p:h<CR>
+
+nnoremap <c-p><c-p> :CtrlP<CR>
+nnoremap <c-p><c-b> :CtrlPBuffer<CR>
+nnoremap <c-p><c-t> :CtrlPBufTag<CR>
+
+" global replace current word
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+nnoremap <Leader>t :tabnew<CR>
+
+"Why walk when you can fly?
+"http://bairuidahu.deviantart.com/art/Flying-vs-Cycling-261641977
+"nnoremap <Leader>l :ls<CR>:b<space>
+
+"Fugitive git shortcuts
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gl :Glog<CR>
+"browse in github or instaweb
+nnoremap <Leader>gg :Gbrowse<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gm :Gmove<CR>
+nnoremap <Leader>gp :Git push
+
+"Quick edit file list
+nnoremap <Leader>ev :e ~/dotrc/vimrc<CR>
+nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
+nnoremap <Leader>es :e ~/dotrc/vimstickynotes.md<CR>
+nnoremap <Leader>ea :e ~/dotrc/vimannoyances.md<CR>
+nnoremap <Leader>ep :e ~/dotrc/projects.md<CR>
+
+"Haskell bindings
+"AA TODO: make this only valid for filetype=haskell
+nnoremap <Leader>ht :GhcModType<CR>
+
+"haskell browser for haskell_doc.vim
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
+"vim2hs disable all conceals
+let g:haskell_conceal = 0
 
 nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
 
