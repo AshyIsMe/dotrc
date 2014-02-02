@@ -15,8 +15,12 @@ Bundle 'kien/ctrlp.vim'
 " vim-buffalo requires vimple
 Bundle 'dahu/vimple'
 Bundle 'Raimondi/vim-buffalo'
+Bundle 'dahu/vim-fanfingtastic'
+Bundle 'paradigm/TextObjectify'
 
 " Plugins to explore and remove:
+"Bundle 'https://github.com/dahu/MarkMyWords'
+
 Bundle 'mileszs/ack.vim'
 Bundle 'ddollar/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -38,7 +42,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'L9'
 "Bundle 'Markdown'
 Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
-"Bundle 'laurilehmijoki/haskellmode-vim'
+Bundle 'laurilehmijoki/haskellmode-vim'
 Bundle 'dag/vim2hs'
 Bundle 'Conque-Shell'
 Bundle 'jtratner/vim-flavored-markdown'
@@ -79,6 +83,7 @@ colorscheme zenburn
 syntax enable
 let &t_Co=256
 set hlsearch
+set hidden
 
 "statusline setting
 set statusline=%f
@@ -107,8 +112,9 @@ Arpeggio inoremap jk {
 Arpeggio inoremap mw }
 
 let mapleader = " "
-map ; :
-noremap ;; ;
+noremap ; :
+"noremap ;; ;
+map ;; <Plug>fanfingtastic_;
 
 map <F4> :nohl<CR>
 nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
@@ -122,6 +128,7 @@ nnoremap <c-p><c-t> :CtrlPBufTag<CR>
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>bd :bd<CR>
 
 "Why walk when you can fly?
 "http://bairuidahu.deviantart.com/art/Flying-vs-Cycling-261641977
@@ -139,15 +146,19 @@ nnoremap <Leader>gm :Gmove<CR>
 nnoremap <Leader>gp :Git push
 
 "Quick edit file list
-nnoremap <Leader>ev :e ~/dotrc/vimrc<CR>
+"nnoremap <Leader>ev :e ~/dotrc/vimrc<CR>
+nnoremap <Leader>ev :tabnew ~/dotrc/vimrc<CR>
 nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
-nnoremap <Leader>es :e ~/dotrc/vimstickynotes.md<CR>
-nnoremap <Leader>ea :e ~/dotrc/vimannoyances.md<CR>
-nnoremap <Leader>ep :e ~/dotrc/projects.md<CR>
+nnoremap <Leader>es :tabnew ~/dotrc/vimstickynotes.md<CR>
+nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
+nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
+
+nnoremap <leader>p :set paste!<CR>:set paste?<CR>
 
 "Haskell bindings
 "AA TODO: make this only valid for filetype=haskell
 nnoremap <Leader>ht :GhcModType<CR>
+nnoremap <Leader>hi :GhcModTypeInsert<CR>
 
 "haskell browser for haskell_doc.vim
 let g:haddock_browser = "open"
