@@ -16,6 +16,9 @@ Things I need to figure out:
 
 * Haskell 
 ** Hoogle hotkey direct from vim? Should be able to use "open url" through shell
+** hasktags - set up autoregen on save (and compiled successfully)
+*** Can hasktags generate tags for library functions too and jump to source
+on the system somewhere?
 ** Step debugging?
 ** Haskell hoogle lookups. Compare haskellmode to vim2hs - check out the vim2hs "see also" section on github
 ** Haskell editing mode. look into this: https://github.com/chrisdone/structured-haskell-mode
