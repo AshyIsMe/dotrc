@@ -2,6 +2,7 @@
 
 Things I need to figure out:
 
+* Sort out the git branch in the statusline thing.
 * fugitive Gbrowse doesn't always work currently
 * http://www.vim.org/scripts/script.php?script_id=3037 - vim-indent-object indent based text-objects
 * Go vimrc mining here: http://amix.dk/vim/vimrc.html
