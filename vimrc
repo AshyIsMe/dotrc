@@ -21,6 +21,7 @@ Bundle 'paradigm/TextObjectify'
 " Plugins to explore and remove:
 "Bundle 'https://github.com/dahu/MarkMyWords'
 
+Bundle 'nosami/Omnisharp'
 Bundle 'mileszs/ack.vim'
 Bundle 'ddollar/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -169,4 +170,8 @@ let g:haskell_conceal = 0
 nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
 
 
-
+function! SortLines() range
+    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+    execute a:firstline . "," . a:lastline . 'sort n'
+    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+endfunction
