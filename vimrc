@@ -156,6 +156,18 @@ nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 
 nnoremap <leader>p :set paste!<CR>:set paste?<CR>
 
+""" Auto brackets/parenthesis/tags/quotes...
+inoremap (( ()<Esc>i
+inoremap [[ []<Esc>i
+inoremap {{ {}<Esc>i
+inoremap "" ""<Esc>i
+vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
+inoremap '' ''<Esc>i
+inoremap `` ``<Esc>i
+vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
+inoremap << <><Esc>i
+
+
 "Haskell bindings
 "AA TODO: make this only valid for filetype=haskell
 nnoremap <Leader>ht :GhcModType<CR>
