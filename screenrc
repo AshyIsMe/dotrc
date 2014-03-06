@@ -1,3 +1,4 @@
 
 hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%d.%m.%Y %{w}| %{g}%l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
 
+hardstatus alwayslastline "%{.kG}[%{W}%-w%{.bW}%n*%f %t%{-}%+w%{G}]%=%{G}[%{Y}%H %{y}%l%{G}] [%{B}%d/%m %{W}%c:%s%{G}]"
