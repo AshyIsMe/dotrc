@@ -22,3 +22,12 @@ then
 fi
 
 vim +BundleInstall +qall
+
+
+#Back up any existing screenrc
+if [ -e ~/.screenrc ]
+then
+	mv ~/.screenrc ~/.screenrc.old
+fi
+
+ln -s `pwd`/screenrc `echo ~`/.screenrc
