@@ -17,10 +17,17 @@ Bundle 'dahu/vimple'
 Bundle 'Raimondi/vim-buffalo'
 Bundle 'dahu/vim-fanfingtastic'
 Bundle 'paradigm/TextObjectify'
+Bundle 'dahu/SearchParty'
 
 " Plugins to explore and remove:
 "Bundle 'https://github.com/dahu/MarkMyWords'
+"
+"Try out echofunc sometime (function argument hints from tags file):
+"http://www.vim.org/scripts/script[hp?script_id=1735
+"
 
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/vimshell.vim'
 Bundle 'nosami/Omnisharp'
 Bundle 'mileszs/ack.vim'
 Bundle 'ddollar/nerdcommenter'
@@ -50,7 +57,6 @@ Bundle 'jtratner/vim-flavored-markdown'
 Bundle 'airblade/vim-gitgutter'
 "Bundle 'itchyny/calendar.vim'
 Bundle 'eagletmt/ghcmod-vim'
-Bundle 'Shougo/vimproc.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'cecutil'
@@ -118,7 +124,8 @@ noremap ; :
 map ;; <Plug>fanfingtastic_;
 
 map <F4> :nohl<CR>
-nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
+"SearchParty does this <C-L> mapping now
+"nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
 map <Leader>cd :lcd %:p:h<CR>
 
 nnoremap <c-p><c-p> :CtrlP<CR>
@@ -155,6 +162,12 @@ nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
 nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 
 nnoremap <leader>p :set paste!<CR>:set paste?<CR>
+
+"Arrow keys used to change window size
+no <Down>  <C-w>-
+no <Up>    <C-w>+
+no <Left>  <C-w><
+no <Right> <C-w>>
 
 """ Auto brackets/parenthesis/tags/quotes...
 inoremap (( ()<Esc>i
