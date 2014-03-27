@@ -25,6 +25,8 @@ Bundle 'dahu/SearchParty'
 "Try out echofunc sometime (function argument hints from tags file):
 "http://www.vim.org/scripts/script[hp?script_id=1735
 "
+Bundle 'dbext.vim'
+Bundle 'SQLComplete.vim'
 
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/vimshell.vim'
