@@ -10,7 +10,6 @@ then
 	mv ~/.vim ~/.vim.old
 fi
 
-
 #Create links in the home dir
 ln -s `pwd`/vimrc `echo ~`/.vimrc
 ln -s `pwd`/dotvim `echo ~`/.vim
@@ -31,3 +30,11 @@ then
 fi
 
 ln -s `pwd`/screenrc `echo ~`/.screenrc
+
+#Same with the tmux.conf
+if [ -e ~/.tmux.conf ]
+then
+	mv ~/.tmux.conf ~/.tmux.conf.old
+fi
+
+ln -s `pwd`/tmux.conf `echo ~`/.tmux.conf

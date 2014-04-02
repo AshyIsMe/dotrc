@@ -19,6 +19,7 @@ Bundle 'dahu/vim-fanfingtastic'
 Bundle 'paradigm/TextObjectify'
 Bundle 'dahu/SearchParty'
 
+Bundle 'AshyIsMe/2048'
 " Plugins to explore and remove:
 "Bundle 'https://github.com/dahu/MarkMyWords'
 "
