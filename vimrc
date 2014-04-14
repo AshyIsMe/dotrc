@@ -26,8 +26,10 @@ Bundle 'AshyIsMe/2048'
 "Try out echofunc sometime (function argument hints from tags file):
 "http://www.vim.org/scripts/script[hp?script_id=1735
 "
-Bundle 'dbext.vim'
-Bundle 'SQLComplete.vim'
+Bundle 'dahu/VimGym'
+
+"Bundle 'dbext.vim'
+"Bundle 'SQLComplete.vim'
 
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/vimshell.vim'
@@ -203,3 +205,16 @@ function! SortLines() range
     execute a:firstline . "," . a:lastline . 'sort n'
     execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
 endfunction
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+
+"Stupid shit lolololo
+nnoremap <Leader>mn :call system("say mnemonic")<CR>
