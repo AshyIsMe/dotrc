@@ -38,3 +38,11 @@ then
 fi
 
 ln -s `pwd`/tmux.conf `echo ~`/.tmux.conf
+
+#Same with the ghci.conf
+if [ -e ~/.ghc/ghci.conf ]
+then
+	mv ~/.ghc/ghci.conf ~/.ghc/ghci.conf.old
+fi
+
+ln -s `pwd`/ghci.conf `echo ~`/.ghc/ghci.conf

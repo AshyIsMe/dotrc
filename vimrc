@@ -28,6 +28,8 @@ Bundle 'AshyIsMe/2048'
 "
 Bundle 'dahu/VimGym'
 
+Bundle 'joonty/vdebug.git'
+
 "Bundle 'dbext.vim'
 "Bundle 'SQLComplete.vim'
 
@@ -175,15 +177,15 @@ no <Left>  <C-w><
 no <Right> <C-w>>
 
 """ Auto brackets/parenthesis/tags/quotes...
-inoremap (( ()<Esc>i
-inoremap [[ []<Esc>i
-inoremap {{ {}<Esc>i
-inoremap "" ""<Esc>i
-vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
-inoremap '' ''<Esc>i
-inoremap `` ``<Esc>i
-vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
-inoremap << <><Esc>i
+"inoremap (( ()<Esc>i
+"inoremap [[ []<Esc>i
+"inoremap {{ {}<Esc>i
+"inoremap "" ""<Esc>i
+"vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
+"inoremap '' ''<Esc>i
+"inoremap `` ``<Esc>i
+"vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
+"inoremap << <><Esc>i
 
 
 "Haskell bindings
@@ -196,6 +198,13 @@ let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 "vim2hs disable all conceals
 let g:haskell_conceal = 0
+
+function! SetToCabalBuild()
+  if glob("*.cabal") != ''
+    set makeprg=cabal\ build
+  endif
+endfunction
+autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
 
 nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
 
