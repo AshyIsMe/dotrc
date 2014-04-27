@@ -137,7 +137,7 @@ map <Leader>cd :lcd %:p:h<CR>
 
 nnoremap <c-p><c-p> :CtrlP<CR>
 nnoremap <c-p><c-b> :CtrlPBuffer<CR>
-nnoremap <c-p><c-t> :CtrlPBufTag<CR>
+nnoremap <c-p><c-t> :CtrlPTag<CR>
 
 " global replace current word
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
