@@ -199,6 +199,10 @@ let g:haddock_browser_callformat = "%s %s"
 "vim2hs disable all conceals
 let g:haskell_conceal = 0
 
+"Haskell codex stuff (https://github.com/aloiscochard/codex)
+set tags=tags;/,codex.tags;/
+:au BufWritePost *.cabal !codex update
+
 function! SetToCabalBuild()
   if glob("*.cabal") != ''
     set makeprg=cabal\ build
@@ -224,6 +228,3 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-
-"Stupid shit lolololo
-nnoremap <Leader>mn :call system("say mnemonic")<CR>
