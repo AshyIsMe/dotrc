@@ -135,6 +135,9 @@ map <F4> :nohl<CR>
 "nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
 map <Leader>cd :lcd %:p:h<CR>
 
+"make Y work like C and D
+map Y y$
+
 nnoremap <c-p><c-p> :CtrlP<CR>
 nnoremap <c-p><c-b> :CtrlPBuffer<CR>
 nnoremap <c-p><c-t> :CtrlPTag<CR>
@@ -169,6 +172,10 @@ nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
 nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 
 nnoremap <leader>p :set paste!<CR>:set paste?<CR>
+
+
+nnoremap <leader>dt :diffthis<CR>
+nnoremap <leader>do :diffoff<CR>
 
 "Arrow keys used to change window size
 no <Down>  <C-w>-
@@ -228,3 +235,4 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+set foldlevelstart=10
