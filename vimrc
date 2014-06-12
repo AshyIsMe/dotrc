@@ -156,9 +156,10 @@ nnoremap <Leader>bd :bd<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gB :Gbrowse<CR>
 nnoremap <Leader>gl :Glog<CR>
 "browse in github or instaweb
-nnoremap <Leader>gg :Gbrowse<CR>
+nnoremap <Leader>gg :Ggrep 
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gm :Gmove<CR>
 nnoremap <Leader>gp :Git push
