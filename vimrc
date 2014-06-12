@@ -198,7 +198,7 @@ no <Right> <C-w>>
 "Haskell bindings
 "AA TODO: make this only valid for filetype=haskell
 nnoremap <Leader>ht :GhcModType<CR>
-nnoremap <Leader>hi :GhcModTypeInsert<CR>
+nnoremap <Leader>hT :GhcModTypeInsert<CR>
 
 "haskell browser for haskell_doc.vim
 let g:haddock_browser = "open"
