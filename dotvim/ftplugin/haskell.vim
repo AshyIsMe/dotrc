@@ -1,0 +1,3 @@
+
+setlocal omnifunc=necoghc#omnifunc
+

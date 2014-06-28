@@ -20,6 +20,8 @@ Bundle 'paradigm/TextObjectify'
 Bundle 'dahu/SearchParty'
 
 Bundle 'AshyIsMe/2048'
+Bundle 'dahu/tiktok'
+Bundle 'dahu/vim-quiz'
 " Plugins to explore and remove:
 "Bundle 'https://github.com/dahu/MarkMyWords'
 "
@@ -64,6 +66,7 @@ Bundle 'jtratner/vim-flavored-markdown'
 Bundle 'airblade/vim-gitgutter'
 "Bundle 'itchyny/calendar.vim'
 Bundle 'eagletmt/ghcmod-vim'
+Bundle 'eagletmt/neco-ghc'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'cecutil'
