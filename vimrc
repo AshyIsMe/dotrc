@@ -181,6 +181,17 @@ nnoremap <leader>p :set paste!<CR>:set paste?<CR>
 nnoremap <leader>dt :diffthis<CR>
 nnoremap <leader>do :diffoff<CR>
 
+"quick indentation checking
+nnoremap <leader>C :call ToggleCC()<CR>
+function! ToggleCC()
+  if &cc ==? 0
+    let &cc = col(".")
+  else
+    let &cc=0
+  endif
+endfunction
+
+
 "Arrow keys used to change window size
 no <Down>  <C-w>-
 no <Up>    <C-w>+
