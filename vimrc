@@ -225,6 +225,8 @@ let g:haskell_conceal = 0
 set tags=tags;/,codex.tags;/
 :au BufWritePost *.cabal !codex update
 :au BufWritePost *.cabal exec "!hasktags -c '%:h'"
+"AA TODO: Do the same with this command:
+"find . | grep "\.hs" | xargs hscope -b
 
 function! SetToCabalBuild()
   if glob("*.cabal") != ''
