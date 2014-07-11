@@ -224,6 +224,7 @@ let g:haskell_conceal = 0
 "Haskell codex stuff (https://github.com/aloiscochard/codex)
 set tags=tags;/,codex.tags;/
 :au BufWritePost *.cabal !codex update
+:au BufWritePost *.cabal exec "!hasktags -c '%:h'"
 
 function! SetToCabalBuild()
   if glob("*.cabal") != ''
