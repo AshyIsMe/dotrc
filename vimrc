@@ -22,12 +22,17 @@ Bundle 'dahu/SearchParty'
 Bundle 'AshyIsMe/2048'
 Bundle 'dahu/tiktok'
 Bundle 'dahu/vim-quiz'
+
+Bundle 'dhruvasagar/vim-dotoo'
+
 " Plugins to explore and remove:
 "Bundle 'https://github.com/dahu/MarkMyWords'
 "
 "Try out echofunc sometime (function argument hints from tags file):
 "http://www.vim.org/scripts/script[hp?script_id=1735
 "
+Bundle 't9md/vim-choosewin'
+
 Bundle 'dahu/VimGym'
 
 Bundle 'joonty/vdebug.git'
@@ -121,6 +126,11 @@ set laststatus=2
 
 " Section: Mappings
 "
+
+nmap  -  <Plug>(choosewin)
+let g:choosewin_overlay_enable          = 1
+
+
 Arpeggio nnoremap jk {
 Arpeggio nnoremap mw }
 Arpeggio inoremap .p [
@@ -162,7 +172,14 @@ nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gB :Gbrowse<CR>
 nnoremap <Leader>gl :Glog<CR>
 "browse in github or instaweb
-nnoremap <Leader>gg :Ggrep 
+
+"nnoremap <Leader>gg :Ggrep 
+"Better Ggrep mappings
+" global git search for word under the cursor (with highlight)
+nnoremap <Leader>gg :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR><C-L>
+" same in visual mode
+vnoremap <leader>gg y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR><C-L>
+
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gm :Gmove<CR>
 nnoremap <Leader>gp :Git push
