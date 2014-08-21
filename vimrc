@@ -166,7 +166,10 @@ nnoremap <Leader>bd :bd<CR>
 "nnoremap <Leader>l :ls<CR>:b<space>
 
 "Fugitive git shortcuts
-nnoremap <Leader>gs :Gstatus<CR>
+"nnoremap <Leader>gs :Gstatus<CR>
+"nnoremap <leader>gts :Gstatus<CR><C-W><S-T>
+"Status now opens in new tab
+nnoremap <leader>gs :Gstatus<CR><C-W><S-T>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gB :Gbrowse<CR>
@@ -269,5 +272,6 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp/'
 
 set foldlevelstart=10
