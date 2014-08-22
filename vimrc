@@ -164,6 +164,18 @@ vmap <Leader>P "*P
 "Clashes with this unfortunately
 "nnoremap <leader>p :set paste!<CR>:set paste?<CR>
 
+" vimux mappings
+map <Leader>vp :VimuxPromptCommand<CR>
+function! VimuxSlime()
+  call VimuxSendText(@v)
+  call VimuxSendKeys("Enter")
+endfunction
+" If text is selected, save it in the v buffer and send that buffer it to tmux
+vmap <Leader>vs "vy :call VimuxSlime()<CR>
+" Select current paragraph and send it to tmux
+nmap <Leader>vs vip<Leader>vs<CR>
+
+
 "Why walk when you can fly?
 "http://bairuidahu.deviantart.com/art/Flying-vs-Cycling-261641977
 "nnoremap <Leader>l :ls<CR>:b<space>
