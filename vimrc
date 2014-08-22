@@ -31,6 +31,7 @@ Bundle 'dhruvasagar/vim-dotoo'
 "Try out echofunc sometime (function argument hints from tags file):
 "http://www.vim.org/scripts/script[hp?script_id=1735
 "
+Bundle 'benmills/vimux'
 Bundle 't9md/vim-choosewin'
 
 Bundle 'dahu/VimGym'
@@ -75,9 +76,6 @@ Bundle 'eagletmt/neco-ghc'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'cecutil'
-"Arpeggio
-Bundle 'kana/vim-arpeggio'
-call arpeggio#load()
 
 " Brief help
 " :BundleList          - list configured bundles
@@ -131,13 +129,6 @@ nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable          = 1
 
 
-Arpeggio nnoremap jk {
-Arpeggio nnoremap mw }
-Arpeggio inoremap .p [
-Arpeggio inoremap cg ]
-Arpeggio inoremap jk {
-Arpeggio inoremap mw }
-
 let mapleader = " "
 noremap ; :
 "noremap ;; ;
@@ -160,6 +151,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>bd :bd<CR>
+nnoremap <Leader>w :w<CR>
 
 "Why walk when you can fly?
 "http://bairuidahu.deviantart.com/art/Flying-vs-Cycling-261641977
@@ -183,6 +175,7 @@ nnoremap <Leader>gg :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "
 " same in visual mode
 vnoremap <leader>gg y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR><C-L>
 
+"Exit out of diff mode with: <C-w><C-o>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gm :Gmove<CR>
 nnoremap <Leader>gp :Git push
@@ -217,17 +210,6 @@ no <Down>  <C-w>-
 no <Up>    <C-w>+
 no <Left>  <C-w><
 no <Right> <C-w>>
-
-""" Auto brackets/parenthesis/tags/quotes...
-"inoremap (( ()<Esc>i
-"inoremap [[ []<Esc>i
-"inoremap {{ {}<Esc>i
-"inoremap "" ""<Esc>i
-"vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
-"inoremap '' ''<Esc>i
-"inoremap `` ``<Esc>i
-"vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
-"inoremap << <><Esc>i
 
 
 "Haskell bindings
