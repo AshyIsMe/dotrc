@@ -151,7 +151,18 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>bd :bd<CR>
-nnoremap <Leader>w :w<CR>
+" Save a file faster.
+nnoremap <Leader>w :update<CR>
+" Copy and paste to system clipboard easily
+" Stolen from here: http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+vmap <Leader>y "*y
+vmap <Leader>d "*d
+nmap <Leader>p "*p
+nmap <Leader>P "*P
+vmap <Leader>p "*p
+vmap <Leader>P "*P
+"Clashes with this unfortunately
+"nnoremap <leader>p :set paste!<CR>:set paste?<CR>
 
 "Why walk when you can fly?
 "http://bairuidahu.deviantart.com/art/Flying-vs-Cycling-261641977
@@ -188,7 +199,6 @@ nnoremap <Leader>es :tabnew ~/dotrc/vimstickynotes.md<CR>
 nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
 nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 
-nnoremap <leader>p :set paste!<CR>:set paste?<CR>
 
 
 nnoremap <leader>dt :diffthis<CR>
