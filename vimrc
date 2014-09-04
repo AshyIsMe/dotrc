@@ -33,6 +33,7 @@ Bundle 'dhruvasagar/vim-dotoo'
 "
 Bundle 'benmills/vimux'
 Bundle 't9md/vim-choosewin'
+Bundle 'bling/vim-airline'
 
 Bundle 'dahu/VimGym'
 
