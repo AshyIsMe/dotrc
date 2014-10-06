@@ -25,12 +25,16 @@ Bundle 'dahu/vim-quiz'
 
 Bundle 'dhruvasagar/vim-dotoo'
 
+Bundle 'tpope/vim-surround'
+
 " Plugins to explore and remove:
 "Bundle 'https://github.com/dahu/MarkMyWords'
 "
 "Try out echofunc sometime (function argument hints from tags file):
 "http://www.vim.org/scripts/script[hp?script_id=1735
 "
+Bundle 'nathanaelkane/vim-indent-guides'
+
 Bundle 'benmills/vimux'
 Bundle 't9md/vim-choosewin'
 Bundle 'bling/vim-airline'
@@ -149,6 +153,7 @@ nnoremap <c-p><c-t> :CtrlPTag<CR>
 
 " global replace current word
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>S :%s/\s\+$//g<CR>
 
 nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>bd :bd<CR>
