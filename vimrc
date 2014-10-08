@@ -6,7 +6,7 @@ call vundle#rc()
 
 " Section: Plugins
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " Essential plugins:
@@ -197,10 +197,11 @@ nnoremap <Leader>gB :Gbrowse<CR>
 nnoremap <Leader>gl :Glog<CR>
 "browse in github or instaweb
 
-"nnoremap <Leader>gg :Ggrep 
+"nnoremap <Leader>gg :Ggrep
 "Better Ggrep mappings
 " global git search for word under the cursor (with highlight)
-nnoremap <Leader>gg :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR><C-L>
+nnoremap <Leader>gg :silent Ggrep  <bar> cw <bar> redraw!<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+nnoremap <Leader>gG :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR><C-L>
 " same in visual mode
 vnoremap <leader>gg y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR><C-L>
 
