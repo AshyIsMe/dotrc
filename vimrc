@@ -16,6 +16,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'dahu/vimple'
 Bundle 'Raimondi/vim-buffalo'
 Bundle 'dahu/vim-fanfingtastic'
+Bundle 'tpope/vim-repeat'
 Bundle 'paradigm/TextObjectify'
 Bundle 'dahu/SearchParty'
 
@@ -24,8 +25,11 @@ Bundle 'dahu/tiktok'
 Bundle 'dahu/vim-quiz'
 
 Bundle 'dhruvasagar/vim-dotoo'
+Bundle 'vimwiki/vimwiki'
 
 Bundle 'tpope/vim-surround'
+
+Bundle 'PProvost/vim-ps1'
 
 " Plugins to explore and remove:
 "Bundle 'https://github.com/dahu/MarkMyWords'
@@ -33,7 +37,11 @@ Bundle 'tpope/vim-surround'
 "Try out echofunc sometime (function argument hints from tags file):
 "http://www.vim.org/scripts/script[hp?script_id=1735
 "
+Bundle 'EasyMotion'
 Bundle 'nathanaelkane/vim-indent-guides'
+
+" Vimpeg - Possibly useful for ASTEdit
+Bundle 'dahu/Vimpeg'
 
 Bundle 'benmills/vimux'
 Bundle 't9md/vim-choosewin'
@@ -139,6 +147,17 @@ noremap ; :
 "noremap ;; ;
 map ;; <Plug>fanfingtastic_;
 
+"From Walt
+"Open current file in next window(requires at least one split open)
+"nnoremap <leader>z <esc><c-w>w:CtrlPMRUFiles<CR><CR>
+"Open new tab and bring up MRU list
+"nnoremap <leader>t :tabnew<CR>:CtrlPMRUFiles<CR>
+"Open new vertical split and bring up MRU list
+nnoremap <leader>v <c-w>v<c-w>w:CtrlPMRUFiles<CR>
+"Quicker mapping for going to next window
+"nnoremap <leader>q <c-w>w
+
+
 map <F4> :nohl<CR>
 "SearchParty does this <C-L> mapping now
 "nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
@@ -201,7 +220,7 @@ nnoremap <Leader>gl :Glog<CR>
 "Better Ggrep mappings
 " global git search for word under the cursor (with highlight)
 :command! -nargs=1 G silent Ggrep <args> | cwindow | redraw!
-:nnoremap <leader>gg :G 
+:nnoremap <leader>gg :G<space>
 nnoremap <Leader>gG :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR><C-L>
 " same in visual mode
 vnoremap <leader>gg y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR><C-L>
@@ -220,9 +239,12 @@ nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
 nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 
 
+"Remove trailing whitespace from all lines. (Gross, trailing whitespace!)
+"Mnemonic CleanSpaces
+nnoremap <leader>cs :%s/\s\+$//<CR>
 
 nnoremap <leader>dt :diffthis<CR>
-nnoremap <leader>do :diffoff<CR>
+nnoremap <leader>do :diffoff!<CR>
 
 "quick indentation checking
 nnoremap <leader>C :call ToggleCC()<CR>
@@ -246,6 +268,8 @@ no <Right> <C-w>>
 "AA TODO: make this only valid for filetype=haskell
 nnoremap <Leader>ht :GhcModType<CR>
 nnoremap <Leader>hT :GhcModTypeInsert<CR>
+"AA TODO: Fix the section hotkeys for useful defaults in Haskell and
+"Javascript - See :h section - eg: :map [[ ?{<CR>w99[{
 
 "haskell browser for haskell_doc.vim
 let g:haddock_browser = "open"
@@ -255,10 +279,11 @@ let g:haskell_conceal = 0
 
 "Haskell codex stuff (https://github.com/aloiscochard/codex)
 set tags=tags;/,codex.tags;/
-:au BufWritePost *.cabal !codex update
-:au BufWritePost *.cabal exec "!hasktags -c '%:h'"
+:au BufWritePost *.cabal exec "!codex update &"
+:au BufWritePost *.cabal exec "!hasktags -c '%:h' &"
 "AA TODO: Do the same with this command:
 "find . | grep "\.hs" | xargs hscope -b
+"Steal the hscope settings from here: https://github.com/begriffs/haskell-vim-now
 
 function! SetToCabalBuild()
   if glob("*.cabal") != ''
