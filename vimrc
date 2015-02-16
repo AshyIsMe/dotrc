@@ -176,6 +176,7 @@ nnoremap <Leader>S :%s/\s\+$//g<CR>
 
 nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>bd :bd<CR>
+nnoremap <Leader>bD :bd!<CR>
 " Save a file faster.
 nnoremap <Leader>w :update<CR>
 " Copy and paste to system clipboard easily
@@ -241,7 +242,7 @@ nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 
 "Remove trailing whitespace from all lines. (Gross, trailing whitespace!)
 "Mnemonic CleanSpaces
-nnoremap <leader>cs :%s/\s\+$//<CR>
+nnoremap <leader>cs :%s/\s\+$//g<CR>
 
 nnoremap <leader>dt :diffthis<CR>
 nnoremap <leader>do :diffoff!<CR>
