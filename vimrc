@@ -14,7 +14,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 " vim-buffalo requires vimple
 Bundle 'dahu/vimple'
-Bundle 'Raimondi/vim-buffalo'
+"Use CtrlPBuffer instead
+"Bundle 'Raimondi/vim-buffalo'
 Bundle 'dahu/vim-fanfingtastic'
 Bundle 'tpope/vim-repeat'
 Bundle 'paradigm/TextObjectify'
@@ -30,6 +31,8 @@ Bundle 'vimwiki/vimwiki'
 Bundle 'tpope/vim-surround'
 
 Bundle 'PProvost/vim-ps1'
+
+Bundle 'ggVGc/vim-fuzzy-search'
 
 " Plugins to explore and remove:
 "Bundle 'https://github.com/dahu/MarkMyWords'
@@ -56,7 +59,7 @@ Bundle 'joonty/vdebug.git'
 
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/vimshell.vim'
-Bundle 'nosami/Omnisharp'
+"Bundle 'nosami/Omnisharp'
 Bundle 'mileszs/ack.vim'
 Bundle 'ddollar/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -98,6 +101,9 @@ Bundle 'cecutil'
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+
+"fzf
+set rtp+=~/.fzf
 
 filetype plugin indent on     " required!
 
@@ -156,6 +162,8 @@ map ;; <Plug>fanfingtastic_;
 nnoremap <leader>v <c-w>v<c-w>w:CtrlPMRUFiles<CR>
 "Quicker mapping for going to next window
 "nnoremap <leader>q <c-w>w
+
+nnoremap / :FuzzySearch<CR>
 
 
 map <F4> :nohl<CR>
