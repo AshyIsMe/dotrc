@@ -1,111 +1,69 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"Now using pathogen and git submodules to manage plugins
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
-" Section: Plugins
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+nnoremap / :FuzzySearch<CR>
 
-" Essential plugins:
-Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
-" vim-buffalo requires vimple
-Bundle 'dahu/vimple'
-"Use CtrlPBuffer instead
-"Bundle 'Raimondi/vim-buffalo'
-Bundle 'dahu/vim-fanfingtastic'
-Bundle 'tpope/vim-repeat'
-Bundle 'paradigm/TextObjectify'
-Bundle 'dahu/SearchParty'
 
-Bundle 'AshyIsMe/2048'
-Bundle 'dahu/tiktok'
-Bundle 'dahu/vim-quiz'
+"" Essential plugins:
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'tpope/vim-repeat'
+"Bundle 'tpope/vim-surround'
+"Bundle 'dahu/vimple'
+"Bundle 'dahu/vim-fanfingtastic'
+"Bundle 'paradigm/TextObjectify'
+"Bundle 'dahu/SearchParty'
 
-Bundle 'dhruvasagar/vim-dotoo'
-Bundle 'vimwiki/vimwiki'
 
-Bundle 'tpope/vim-surround'
+"" Section: Plugins
+"Bundle 'AshyIsMe/2048'
 
-Bundle 'PProvost/vim-ps1'
+"" Useful plugins
+"Bundle 'PProvost/vim-ps1'
+"Bundle 'ggVGc/vim-fuzzy-search'
+"Bundle 'bling/vim-airline'
 
-Bundle 'ggVGc/vim-fuzzy-search'
 
-" Plugins to explore and remove:
-"Bundle 'https://github.com/dahu/MarkMyWords'
-"
-"Try out echofunc sometime (function argument hints from tags file):
-"http://www.vim.org/scripts/script[hp?script_id=1735
-"
-Bundle 'EasyMotion'
-Bundle 'nathanaelkane/vim-indent-guides'
+""
+""Try out echofunc sometime (function argument hints from tags file):
+""http://www.vim.org/scripts/script[hp?script_id=1735
 
-" Vimpeg - Possibly useful for ASTEdit
-Bundle 'dahu/Vimpeg'
 
-Bundle 'benmills/vimux'
-Bundle 't9md/vim-choosewin'
-Bundle 'bling/vim-airline'
+"Bundle 'Shougo/vimproc.vim'
+"Bundle 'mileszs/ack.vim'
+"Bundle 'ddollar/nerdcommenter'
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'tpope/vim-unimpaired'
+"Bundle 'ervandew/supertab'
+"Bundle 'scrooloose/syntastic'
+"Bundle 'majutsushi/tagbar'
+""Bundle 'MarcWeber/vim-addon-mw-utils'
+""Bundle 'tomtom/tlib_vim'
+""Bundle 'garbas/vim-snipmate'
+"Bundle 'honza/vim-snippets'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'vim-scripts/ZoomWin'
+""Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"" vim-scripts repos
+"Bundle 'L9'
+""Bundle 'Markdown'
+"Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
+"Bundle 'laurilehmijoki/haskellmode-vim'
+"Bundle 'dag/vim2hs'
+"Bundle 'jtratner/vim-flavored-markdown'
+"Bundle 'airblade/vim-gitgutter'
+"Bundle 'eagletmt/ghcmod-vim'
+"Bundle 'eagletmt/neco-ghc'
+"Bundle 'kana/vim-textobj-user'
+"Bundle 'kana/vim-textobj-indent'
+"Bundle 'cecutil'
 
-Bundle 'dahu/VimGym'
-
-Bundle 'joonty/vdebug.git'
-
-"Bundle 'dbext.vim'
-"Bundle 'SQLComplete.vim'
-
-Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/vimshell.vim'
-"Bundle 'nosami/Omnisharp'
-Bundle 'mileszs/ack.vim'
-Bundle 'ddollar/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'vim-scripts/ZoomWin'
-"Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'joonty/vdebug' 	" Gonna need this one later
-"Bundle 'Yggdroot/indentLine'
-" vim-scripts repos
-Bundle 'L9'
-"Bundle 'Markdown'
-Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
-Bundle 'laurilehmijoki/haskellmode-vim'
-Bundle 'dag/vim2hs'
-Bundle 'Conque-Shell'
-Bundle 'jtratner/vim-flavored-markdown'
-Bundle 'airblade/vim-gitgutter'
-"Bundle 'itchyny/calendar.vim'
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'eagletmt/neco-ghc'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kana/vim-textobj-indent'
-Bundle 'cecutil'
-
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-"fzf
 set rtp+=~/.fzf
 
-filetype plugin indent on     " required!
+filetype plugin indent on
 
 
 " Section: Settings
@@ -164,7 +122,6 @@ nnoremap <leader>v <c-w>v<c-w>w:CtrlPMRUFiles<CR>
 "nnoremap <leader>q <c-w>w
 
 nnoremap / :FuzzySearch<CR>
-
 
 map <F4> :nohl<CR>
 "SearchParty does this <C-L> mapping now
@@ -252,6 +209,8 @@ nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 "Mnemonic CleanSpaces
 nnoremap <leader>cs :%s/\s\+$//g<CR>
 
+nnoremap <leader>js :set filetype=javascript<CR>
+
 nnoremap <leader>dt :diffthis<CR>
 nnoremap <leader>do :diffoff!<CR>
 
@@ -321,3 +280,5 @@ endif
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp/'
 
 set foldlevelstart=10
+
+

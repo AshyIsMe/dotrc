@@ -1,0 +1,72 @@
+[submodule "dotvim/bundle/vim-fuzzy-search"]
+	path = dotvim/bundle/vim-fuzzy-search
+	url = https://github.com/ggVGc/vim-fuzzy-search
+[submodule "dotvim/bundle/vim-fugitive"]
+	path = dotvim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "dotvim/bundle/ctrlp.vim"]
+	path = dotvim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
+[submodule "dotvim/bundle/vim-repeat"]
+	path = dotvim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "dotvim/bundle/vim-surround"]
+	path = dotvim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "dotvim/bundle/vimple"]
+	path = dotvim/bundle/vimple
+	url = https://github.com/dahu/vimple
+[submodule "dotvim/bundle/vim-fanfingtastic"]
+	path = dotvim/bundle/vim-fanfingtastic
+	url = https://github.com/dahu/vim-fanfingtastic
+[submodule "dotvim/bundle/TextObjectify"]
+	path = dotvim/bundle/TextObjectify
+	url = https://github.com/paradigm/TextObjectify
+[submodule "dotvim/bundle/SearchParty"]
+	path = dotvim/bundle/SearchParty
+	url = https://github.com/dahu/SearchParty
+[submodule "dotvim/bundle/vimproc.vim"]
+	path = dotvim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
+[submodule "dotvim/bundle/ack.vim"]
+	path = dotvim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule "dotvim/bundle/nerdcommenter"]
+	path = dotvim/bundle/nerdcommenter
+	url = https://github.com/ddollar/nerdcommenter
+[submodule "dotvim/bundle/nerdtree"]
+	path = dotvim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "dotvim/bundle/vim-unimpaired"]
+	path = dotvim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "dotvim/bundle/supertab"]
+	path = dotvim/bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "dotvim/bundle/syntastic"]
+	path = dotvim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "dotvim/bundle/tagbar"]
+	path = dotvim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "dotvim/bundle/vim-addon-mw-utils"]
+	path = dotvim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils
+[submodule "dotvim/bundle/tlib_vim"]
+	path = dotvim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim
+[submodule "dotvim/bundle/vim-snipmate"]
+	path = dotvim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
+[submodule "dotvim/bundle/vim-snippets"]
+	path = dotvim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "dotvim/bundle/ZoomWin"]
+	path = dotvim/bundle/ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin
+[submodule "dotvim/bundle/vim-flavored-markdown"]
+	path = dotvim/bundle/vim-flavored-markdown
+	url = https://github.com/jtratner/vim-flavored-markdown
+[submodule "dotvim/bundle/vim-gitgutter"]
+	path = dotvim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
