@@ -120,6 +120,7 @@ map ;; <Plug>fanfingtastic_;
 nnoremap <leader>v <c-w>v<c-w>w:CtrlPMRUFiles<CR>
 "Quicker mapping for going to next window
 "nnoremap <leader>q <c-w>w
+map <leader>x :vimgrep /<C-R>// %<CR>:cope<CR>
 
 nnoremap / :FuzzySearch<CR>
 
