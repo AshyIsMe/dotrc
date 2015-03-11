@@ -34,9 +34,6 @@
 [submodule "dotvim/bundle/nerdcommenter"]
 	path = dotvim/bundle/nerdcommenter
 	url = https://github.com/ddollar/nerdcommenter
-[submodule "dotvim/bundle/nerdtree"]
-	path = dotvim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree
 [submodule "dotvim/bundle/vim-unimpaired"]
 	path = dotvim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
