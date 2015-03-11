@@ -67,3 +67,9 @@
 [submodule "dotvim/bundle/vim-gitgutter"]
 	path = dotvim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule "dotvim/bundle/--force"]
+	path = dotvim/bundle/--force
+	url = https://github.com/eagletmt/ghcmod-vim
+[submodule "dotvim/bundle/ghcmod-vim"]
+	path = dotvim/bundle/ghcmod-vim
+	url = https://github.com/eagletmt/ghcmod-vim
