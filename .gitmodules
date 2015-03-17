@@ -73,3 +73,6 @@
 [submodule "dotvim/bundle/ghcmod-vim"]
 	path = dotvim/bundle/ghcmod-vim
 	url = https://github.com/eagletmt/ghcmod-vim
+[submodule "dotvim/bundle/vim-ps1"]
+	path = dotvim/bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1
