@@ -19,9 +19,6 @@
 [submodule "dotvim/bundle/vim-fanfingtastic"]
 	path = dotvim/bundle/vim-fanfingtastic
 	url = https://github.com/dahu/vim-fanfingtastic
-[submodule "dotvim/bundle/TextObjectify"]
-	path = dotvim/bundle/TextObjectify
-	url = https://github.com/paradigm/TextObjectify
 [submodule "dotvim/bundle/SearchParty"]
 	path = dotvim/bundle/SearchParty
 	url = https://github.com/dahu/SearchParty
@@ -76,3 +73,6 @@
 [submodule "dotvim/bundle/vim-ps1"]
 	path = dotvim/bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1
+[submodule "dotvim/bundle/targets.vim"]
+	path = dotvim/bundle/targets.vim
+	url = https://github.com/wellle/targets.vim
