@@ -6,61 +6,6 @@ filetype plugin indent on
 
 nnoremap / :FuzzySearch<CR>
 
-
-"" Essential plugins:
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'tpope/vim-repeat'
-"Bundle 'tpope/vim-surround'
-"Bundle 'dahu/vimple'
-"Bundle 'dahu/vim-fanfingtastic'
-"Bundle 'paradigm/TextObjectify'
-"Bundle 'dahu/SearchParty'
-
-
-"" Section: Plugins
-"Bundle 'AshyIsMe/2048'
-
-"" Useful plugins
-"Bundle 'PProvost/vim-ps1'
-"Bundle 'ggVGc/vim-fuzzy-search'
-"Bundle 'bling/vim-airline'
-
-
-""
-""Try out echofunc sometime (function argument hints from tags file):
-""http://www.vim.org/scripts/script[hp?script_id=1735
-
-
-"Bundle 'Shougo/vimproc.vim'
-"Bundle 'mileszs/ack.vim'
-"Bundle 'ddollar/nerdcommenter'
-"Bundle 'scrooloose/nerdtree'
-"Bundle 'tpope/vim-unimpaired'
-"Bundle 'ervandew/supertab'
-"Bundle 'scrooloose/syntastic'
-"Bundle 'majutsushi/tagbar'
-""Bundle 'MarcWeber/vim-addon-mw-utils'
-""Bundle 'tomtom/tlib_vim'
-""Bundle 'garbas/vim-snipmate'
-"Bundle 'honza/vim-snippets'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'vim-scripts/ZoomWin'
-""Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"" vim-scripts repos
-"Bundle 'L9'
-""Bundle 'Markdown'
-"Bundle 'Superior-Haskell-Interaction-Mode-SHIM'
-"Bundle 'laurilehmijoki/haskellmode-vim'
-"Bundle 'dag/vim2hs'
-"Bundle 'jtratner/vim-flavored-markdown'
-"Bundle 'airblade/vim-gitgutter'
-"Bundle 'eagletmt/ghcmod-vim'
-"Bundle 'eagletmt/neco-ghc'
-"Bundle 'kana/vim-textobj-user'
-"Bundle 'kana/vim-textobj-indent'
-"Bundle 'cecutil'
-
 set rtp+=~/.fzf
 
 filetype plugin indent on
