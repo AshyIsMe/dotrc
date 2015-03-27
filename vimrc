@@ -19,8 +19,6 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set ignorecase
-"colorscheme railscasts
-"colorscheme github
 colorscheme zenburn
 syntax enable
 let &t_Co=256
@@ -80,6 +78,7 @@ map Y y$
 nnoremap <c-p><c-p> :CtrlP<CR>
 nnoremap <c-p><c-b> :CtrlPBuffer<CR>
 nnoremap <c-p><c-t> :CtrlPTag<CR>
+nnoremap <leader><space> :CtrlPMRUFiles<CR>
 
 " global replace current word
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
