@@ -24,6 +24,8 @@ syntax enable
 let &t_Co=256
 set hlsearch
 set hidden
+set nobackup
+set noswapfile
 
 "statusline setting
 set statusline=%f
