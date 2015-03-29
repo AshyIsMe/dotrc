@@ -76,3 +76,6 @@
 [submodule "dotvim/bundle/targets.vim"]
 	path = dotvim/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim
+[submodule "dotvim/bundle/vim-processing"]
+	path = dotvim/bundle/vim-processing
+	url = https://github.com/sophacles/vim-processing
