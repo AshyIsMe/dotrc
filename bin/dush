@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#Do something that's similar to "du -sm * | sort -nr" except with htop style usage graphs
+
+function drawgraph {
+  # drawgraph $totalsize $itemsize $itemname
+  args=$@
+  total=$1
+  value=$2
+  name=${args[*]:2}
+  graph="________________________________________"
+  graphlength=${#graph}
+  ratio=$(echo "scale=2; $value / $total" | bc)
+  numchars=$(echo "$graphlength * $ratio / 1" | bc) #dividing by 1 strips off the decimal
+  line=$(printf "%${numchars}s" | tr ' ' '=')
+  graph=$(echo $graph | sed -e "s/_\{$numchars\}/$line/")
+  echo "[$graph] (${value}M / ${total}M)  $name"
+}
+
+TOTAL=($(du -sm))
+TOTAL=${TOTAL[0]}
+
+export -f drawgraph
+du -sm * | sort -nr | xargs -L 1 bash -c "drawgraph $TOTAL \"\$@\"" _
