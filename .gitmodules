@@ -79,3 +79,9 @@
 [submodule "dotvim/bundle/vim-processing"]
 	path = dotvim/bundle/vim-processing
 	url = https://github.com/sophacles/vim-processing
+[submodule "dotvim/bundle/vim-easy-align"]
+	path = dotvim/bundle/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align
+[submodule "dotvim/bundle/tabular"]
+	path = dotvim/bundle/tabular
+	url = https://github.com/godlygeek/tabular
