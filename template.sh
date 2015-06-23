@@ -43,3 +43,5 @@ fi
 if [[ -n "$BAR" ]]; then
    echo "BAR"
 fi
+
+echo "full args were: $ARGS"
