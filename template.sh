@@ -7,6 +7,8 @@
 ##       [-f | --foo]      Foos the bar
 ##       [-b | --bar]      Bars the baz
 
+BASE=$(cd $(dirname $0); pwd -P)                                        
+
 usage() {
    echo "$(grep "^## " "${BASH_SOURCE[0]}" | cut -c 4-)"
    exit 0
