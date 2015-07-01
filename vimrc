@@ -4,12 +4,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-nnoremap / :FuzzySearch<CR>
+nnoremap <Leader>/ :FuzzySearch<CR>
 
 set rtp+=~/.fzf
-
-filetype plugin indent on
-
 
 " Section: Settings
 "
@@ -26,10 +23,12 @@ set hlsearch
 set hidden
 set nobackup
 set noswapfile
+set autoindent
 
 "statusline setting
 set statusline=%f
 set statusline+=%m
+set statusline+=\ \ %{getcwd()}
 "set statusline+=%{RandomStickyLine()}
 set statusline+=%=
 set statusline+=Stickies:
@@ -66,6 +65,7 @@ nnoremap <leader>v <c-w>v<c-w>w:CtrlPMRUFiles<CR>
 "Quicker mapping for going to next window
 "nnoremap <leader>q <c-w>w
 map <leader>x :vimgrep /<C-R>// %<CR>:cope<CR>
+nnoremap <leader>m :make<CR>
 
 nnoremap / :FuzzySearch<CR>
 
@@ -183,6 +183,8 @@ no <Right> <C-w>>
 "AA TODO: make this only valid for filetype=haskell
 nnoremap <Leader>ht :GhcModType<CR>
 nnoremap <Leader>hT :GhcModTypeInsert<CR>
+nnoremap <Leader>hr :!cabal run<CR>
+nnoremap <Leader>hb :!cabal build<CR>
 "AA TODO: Fix the section hotkeys for useful defaults in Haskell and
 "Javascript - See :h section - eg: :map [[ ?{<CR>w99[{
 
@@ -219,10 +221,12 @@ endfunction
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  "set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l -g ""'
 endif
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp/'
 
