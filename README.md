@@ -2,9 +2,13 @@
 
 The idea of this repo is to make it really easy for me to get my vim/bash setup really quickly on a new machine.
 
+# TODO
+- consolidate window management hotkeys for tmux, screen, vim and OSX
+- write a makefile for installing dotrc files
+
 #Install
 ``` bash
-git clone https://github.com/AshyIsMe/dotrc
+git clone --recursive https://github.com/AshyIsMe/dotrc
 cd dotrc
 bash install.sh
 ```
