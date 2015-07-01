@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ## This is a template bash script with usage docs and arg parsing
 ## Usage: template.sh [options]
