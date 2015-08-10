@@ -4,7 +4,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-nnoremap <Leader>/ :FuzzySearch<CR>
+"nnoremap <Leader>/ :FuzzySearch<CR>
 
 set rtp+=~/.fzf
 
@@ -162,15 +162,16 @@ nnoremap <leader>dt :diffthis<CR>
 nnoremap <leader>do :diffoff!<CR>
 
 "quick indentation checking
-nnoremap <leader>C :call ToggleCC()<CR>
-function! ToggleCC()
-  if &cc ==? 0
-    let &cc = col(".")
-  else
-    let &cc=0
-  endif
-endfunction
-
+"nnoremap <leader>C :call ToggleCC()<CR>
+"function! ToggleCC()
+  "if &cc ==? 0
+    "let &cc = col(".")
+  "else
+    "let &cc=0
+  "endif
+"endfunction
+"From bairui
+nnoremap <leader>C m`^:exe 'set cc'.(&cc =~ virtcol('.')?'-=':'+=').virtcol('.')<cr>``
 
 "Arrow keys used to change window size
 no <Down>  <C-w>-
@@ -204,7 +205,8 @@ set tags=tags;/,codex.tags;/
 
 function! SetToCabalBuild()
   if glob("*.cabal") != ''
-    set makeprg=cabal\ build
+    "set makeprg=cabal\ build
+    set makeprg=stack\ build
   endif
 endfunction
 autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
