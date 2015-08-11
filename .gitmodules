@@ -85,3 +85,9 @@
 [submodule "dotvim/bundle/tabular"]
 	path = dotvim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "dotvim/bundle/unite.vim"]
+	path = dotvim/bundle/unite.vim
+	url = https://github.com/Shougo/unite.vim
+[submodule "dotvim/bundle/neomru.vim"]
+	path = dotvim/bundle/neomru.vim
+	url = https://github.com/Shougo/neomru.vim
