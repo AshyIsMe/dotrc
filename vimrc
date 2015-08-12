@@ -211,6 +211,13 @@ no <Up>    <C-w>+
 no <Left>  <C-w><
 no <Right> <C-w>>
 
+nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+
+function! SortLines() range
+    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+    execute a:firstline . "," . a:lastline . 'sort n'
+    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+endfunction
 
 " Haskell bindings {{{2
 "AA TODO: make this only valid for filetype=haskell
@@ -241,14 +248,6 @@ function! SetHaskellMakePRG()
   endif
 endfunction
 autocmd BufEnter *.hs,*.lhs :call SetHaskellMakePRG()
-
-nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
-
-function! SortLines() range
-    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
-    execute a:firstline . "," . a:lastline . 'sort n'
-    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
-endfunction
 
 " grepprg {{{2
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
