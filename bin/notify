@@ -62,7 +62,6 @@ if [[ -z "$SUBTITLE" ]]
 then
   osascript -e "display notification \"$ARGS\" with title \"$TITLE\""
 else 
-  echo "with subtitle"
   osascript -e "display notification \"$ARGS\" with title \"$TITLE\" subtitle \"$SUBTITLE\""
 fi
 
