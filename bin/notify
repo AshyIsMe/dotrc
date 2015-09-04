@@ -60,7 +60,6 @@ fi
 
 if [[ -z "$SUBTITLE" ]]
 then
-  echo "no subtitle"
   osascript -e "display notification \"$ARGS\" with title \"$TITLE\""
 else 
   echo "with subtitle"
