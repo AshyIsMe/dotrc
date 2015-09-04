@@ -1,0 +1,70 @@
+#!/bin/bash
+set -e
+
+## push osx toasts out without needing to use osascript directly
+## Usage: notify [options] Message goes here
+##
+##       [-h | --help]              Print this help message
+##       [-t arg | --title arg]     Sets the title
+##       [-s arg | --subtitle arg]  Sets the subtitle
+
+BASE=$(cd $(dirname $0); pwd -P)                                        
+
+usage() {
+   echo "$(grep "^## " "${BASH_SOURCE[0]}" | cut -c 4-)"
+}
+
+error() {
+   cat <<< "$@" 1>&2
+   exit 1
+}
+
+[[ $# == 0 ]] && usage && exit 1
+
+# Transform long options to short ones
+for arg in "$@"; do
+  shift
+  case "$arg" in
+    "--help")     set -- "$@" "-h" ;;
+    "--title")    set -- "$@" "-t" ;;
+    "--subtitle") set -- "$@" "-s" ;;
+    *)            set -- "$@" "$arg"
+  esac
+done
+# Parse short options
+OPTIND=1
+while getopts "ht:s:" opt
+do
+  case "$opt" in
+    "h") usage; exit 0 ;;
+    "t") TITLE="$OPTARG" ;;
+    "s") SUBTITLE="$OPTARG" ;;
+    "?") usage >&2; exit 1 ;;
+    ":") echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
+  esac
+done
+shift $(expr $OPTIND - 1) # remove options from positional parameters
+
+
+ARGS=$@
+
+#echo "Title: $TITLE"
+#echo "SubTitle: $SUBTITLE"
+#echo "The rest of the args were: $ARGS"
+
+
+#Default title
+if [[ -z "$TITLE" ]]; then
+  TITLE="notify"
+fi
+
+if [[ -z "$SUBTITLE" ]]
+then
+  echo "no subtitle"
+  osascript -e "display notification \"$ARGS\" with title \"$TITLE\""
+else 
+  echo "with subtitle"
+  osascript -e "display notification \"$ARGS\" with title \"$TITLE\" subtitle \"$SUBTITLE\""
+fi
+
+
