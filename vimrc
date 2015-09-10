@@ -62,6 +62,8 @@ nnoremap <leader>m :make<CR>
 
 "SearchParty does this <C-L> mapping now
 "nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
+"Help! I've lost my cursor and can't find it!
+nnoremap <silent> <C-L> :set cursorline <bar> set cursorcolumn <bar> redraw <bar> sleep 80m <bar> set nocursorline <bar> set nocursorcolumn <bar> nohlsearch <bar> redraw! <CR>
 
 "make Y work like C and D
 map Y y$
@@ -225,7 +227,10 @@ nnoremap <Leader>ht :GhcModType<CR>
 nnoremap <Leader>hT :GhcModTypeInsert<CR>
 nnoremap <Leader>hr :!cabal run<CR>
 nnoremap <Leader>hb :!cabal build<CR>
-"AA TODO: Fix the section hotkeys for useful defaults in Haskell and Javascript - See :h section - eg: :map [[ ?{<CR>w99[{
+"AA TODO: 
+"   - Fix the section hotkeys for useful defaults in Haskell and Javascript 
+"     - See :h section - eg: :map [[ ?{<CR>w99[{
+"     - [{ ]}, [( ]), [m ]m etc
 
 "haskell browser for haskell_doc.vim
 let g:haddock_browser = "open"
@@ -259,6 +264,7 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_user_command = 'ag %s -l -g ""'
+  let g:ctrlp_use_caching = 0
 endif
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp/'
 
