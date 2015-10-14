@@ -4,7 +4,6 @@ The idea of this repo is to make it really easy for me to get my vim/bash setup 
 
 # TODO
 - consolidate window management hotkeys for tmux, screen, vim and OSX
-- write a makefile for installing dotrc files
 
 #Install
 ``` bash
@@ -15,21 +14,11 @@ bash install.sh
 
 
 ##Vim
-Currently this is using Vundle with the following list of plugins.
-See the VimCheatSheet.md file in this repo for commands relating to each.
+Plugins managed with pathogen and git submodules in this repo.
 
-- 'mileszs/ack.vim'
-- 'kien/ctrlp.vim'
-- 'ddollar/nerdcommenter'
-- 'scrooloose/nerdtree'
-- 'tpope/vim-unimpaired'
-- 'ervandew/supertab'
-- 'scrooloose/syntastic'
-- 'majutsushi/tagbar'
-- 'garbas/vim-snipmate'
-- 'Lokaltog/vim-easymotion'
-- 'tpope/vim-fugitive'
-- 'vim-scripts/ZoomWin'
-- 'jeetsukumaran/vim-buffergator'
-- 'rstacruz/sparkup', {'rtp': 'vim/'}
-- 'Yggdroot/indentLine'
+### I can never remember the horrible git submodule commands:
+``` bash
+cd dotrc/dotvim/bundle
+git submodule add http://github.com/AshyIsMe/some-vim-plugin
+git commit -m "Added some vim plugin"
+```
