@@ -14,6 +14,7 @@ set shiftwidth=2
 set expandtab
 set ignorecase
 colorscheme zenburn
+"colorscheme desert
 syntax enable
 let &t_Co=256
 set hlsearch
@@ -39,6 +40,25 @@ function! RandomStickyLine()
 endfunction
 
 set laststatus=2
+
+" from mjanssen in #vim
+" Use like :ToBuffer :map<CR>
+function! ToBuffer(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    tabnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+  endif
+endfunction
+command! -nargs=+ -complete=command ToBuffer call ToBuffer(<q-args>)
+
+command! -complete=command ShowMap call ToBuffer(":map")
 
 
 " Section: Mappings {{{1
