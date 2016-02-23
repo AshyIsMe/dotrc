@@ -46,7 +46,7 @@ set laststatus=2
 let mapleader = " "
 
 " From Walt {{{2
-nnoremap / :FuzzySearch<CR>
+"nnoremap / :FuzzySearch<CR>
 map <Leader>cd :lcd %:p:h<CR>
 
 " Randomness {{{2
@@ -196,16 +196,9 @@ nnoremap <leader>cs :%s/\s\+$//g<CR>
 nnoremap <leader>js :set filetype=javascript<CR>
 
 nnoremap <leader>e :Errors<CR>
+nnoremap <leader>y yy p k :call NERDComment(0, "norm")<CR> j
 
 "quick indentation checking
-"nnoremap <leader>C :call ToggleCC()<CR>
-"function! ToggleCC()
-  "if &cc ==? 0
-    "let &cc = col(".")
-  "else
-    "let &cc=0
-  "endif
-"endfunction
 "From bairui
 nnoremap <leader>C m`^:exe 'set cc'.(&cc =~ virtcol('.')?'-=':'+=').virtcol('.')<cr>``
 
