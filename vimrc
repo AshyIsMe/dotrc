@@ -220,7 +220,8 @@ nnoremap <leader>y yy p k :call NERDComment(0, "norm")<CR> j
 
 "quick indentation checking
 "From bairui
-nnoremap <leader>C m`^:exe 'set cc'.(&cc =~ virtcol('.')?'-=':'+=').virtcol('.')<cr>``
+"nnoremap <leader>C m`^:exe 'set cc'.(&cc =~ virtcol('.')?'-=':'+=').virtcol('.')<cr>``
+nnoremap <leader>C :set cursorcolumn!<cr>
 
 "Arrow keys used to change window size
 no <Down>  <C-w>-
