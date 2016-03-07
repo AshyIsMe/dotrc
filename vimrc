@@ -34,6 +34,10 @@ set statusline+=Stickies:
 let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
 set statusline+=%{stickiescount}
 
+" Make listchars show dashes for trailing whitespace
+" AA TODO: Make syntax highlighting highlight trailing whitespace
+set listchars+=trail:-
+
 function! RandomStickyLine()
   let randomsticky=" | Random Sticky: " . system("grep \"*\" ~/dotrc/vimstickynotes.md | head -$((${RANDOM} % `grep \"*\" ~/dotrc/vimstickynotes.md | wc -l` + 1)) | tail -1 | tr -d '*\n'")
   return randomsticky
