@@ -34,10 +34,6 @@ set statusline+=Stickies:
 let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
 set statusline+=%{stickiescount}
 
-" Make listchars show dashes for trailing whitespace
-" AA TODO: Make syntax highlighting highlight trailing whitespace
-set listchars+=trail:-
-
 function! RandomStickyLine()
   let randomsticky=" | Random Sticky: " . system("grep \"*\" ~/dotrc/vimstickynotes.md | head -$((${RANDOM} % `grep \"*\" ~/dotrc/vimstickynotes.md | wc -l` + 1)) | tail -1 | tr -d '*\n'")
   return randomsticky
@@ -213,6 +209,10 @@ nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
 nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 
 " Randomness {{{2
+
+" Make listchars show dashes for trailing whitespace
+" AA TODO: Make syntax highlighting highlight trailing whitespace
+set listchars+=trail:-
 "Remove trailing whitespace from all lines. (Gross, trailing whitespace!)
 "Mnemonic CleanSpaces
 nnoremap <leader>cs :%s/\s\+$//g<CR>
