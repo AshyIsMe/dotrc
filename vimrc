@@ -24,6 +24,15 @@ set noswapfile
 set autoindent
 set foldmethod=marker
 
+" Trailing Whitespace {{{1
+" Show trailing whitepace and spaces before a tab:
+highlight ExtraWhitespace ctermbg=red guibg=red
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+" Make listchars show dashes for trailing whitespace
+set listchars+=trail:-
+
+
 " Section: Statusline - TODO: airline or better {{{1
 set statusline=%f
 set statusline+=%m
@@ -208,14 +217,11 @@ nnoremap <Leader>es :tabnew ~/dotrc/vimstickynotes.md<CR>
 nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
 nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
 
+
 " Randomness {{{2
 
-" Make listchars show dashes for trailing whitespace
-" AA TODO: Make syntax highlighting highlight trailing whitespace
-set listchars+=trail:-
 "Remove trailing whitespace from all lines. (Gross, trailing whitespace!)
-"Mnemonic CleanSpaces
-nnoremap <leader>cs :%s/\s\+$//g<CR>
+nnoremap <leader>$ :%s/\s\+$//g<CR>
 
 nnoremap <leader>js :set filetype=javascript<CR>
 
