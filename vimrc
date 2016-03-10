@@ -152,33 +152,6 @@ nnoremap <c-p><c-b> :CtrlPBuffer<CR>
 nnoremap <c-p><c-t> :CtrlPTag<CR>
 """""nnoremap <leader><space> :CtrlPMRUFiles<CR>
 
-"Unite mappings
-"AA TODO: set unite to use ag searcher
-let g:unite_source_history_yank_enable = 1
-let g:unite_source_grep_command = 'ag'
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>uf :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <leader>uF :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
-"nnoremap <leader>ur :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader><space> :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>uo :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>uy :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>ub :<C-u>Unite -no-split -buffer-name=buffer  -start-insert buffer<cr>
-
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-
-  imap <buffer> <C-c>   <Plug>(unite_exit)
-  nmap <buffer> <esc>   <Plug>(unite_exit)
-endfunction
-
-
 " Fugitive git shortcuts {{{2
 "nnoremap <Leader>gs :Gstatus<CR>
 "nnoremap <leader>gts :Gstatus<CR><C-W><S-T>

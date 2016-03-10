@@ -85,12 +85,6 @@
 [submodule "dotvim/bundle/tabular"]
 	path = dotvim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "dotvim/bundle/unite.vim"]
-	path = dotvim/bundle/unite.vim
-	url = https://github.com/Shougo/unite.vim
-[submodule "dotvim/bundle/neomru.vim"]
-	path = dotvim/bundle/neomru.vim
-	url = https://github.com/Shougo/neomru.vim
 [submodule "dotvim/bundle/vim-sleuth"]
 	path = dotvim/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth
