@@ -221,11 +221,14 @@ function! SortLines() range
 endfunction
 
 " Haskell bindings {{{2
-"AA TODO: make this only valid for filetype=haskell
-nnoremap <Leader>ht :GhcModType<CR>
-nnoremap <Leader>hT :GhcModTypeInsert<CR>
-nnoremap <Leader>hr :!cabal run<CR>
-nnoremap <Leader>hb :!cabal build<CR>
+augroup HaskellMappings
+  autocmd!
+  autocmd FileType haskell nnoremap <Leader>ht :GhcModType<CR>
+  autocmd FileType haskell nnoremap <Leader>hT :GhcModTypeInsert<CR>
+  autocmd FileType haskell nnoremap <Leader>hr :!cabal run<CR>
+  autocmd FileType haskell nnoremap <Leader>hb :!cabal build<CR>
+augroup END
+
 "AA TODO:
 "   - Fix the section hotkeys for useful defaults in Haskell and Javascript
 "     - See :h section - eg: :map [[ ?{<CR>w99[{
