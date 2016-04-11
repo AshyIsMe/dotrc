@@ -195,12 +195,15 @@ nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
 
 " Trialing new FZF mappings
 " TODO: MRU plugin
+nnoremap <Leader>a :Ag<CR>
 nnoremap <Leader>e :Files<CR>
+nnoremap <Leader>fg :GitFiles<CR>
 nnoremap <Leader>fb :Buffers<CR>
-"nnoremap <Leader>fh :Helptags<CR>
 ":History is a cheap replacement for MRU
 nnoremap <Leader>fh :History<CR>
+nnoremap <Leader>fH :Helptags<CR>
 nnoremap <Leader>ft :Tags<CR>
+nnoremap <Leader>fT :BTags<CR>
 nnoremap <Leader>fc :Commands<CR>
 
 
