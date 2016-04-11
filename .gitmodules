@@ -88,3 +88,6 @@
 [submodule "dotvim/bundle/vim-sleuth"]
 	path = dotvim/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth
+[submodule "dotvim/bundle/fzf.vim"]
+	path = dotvim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
