@@ -147,10 +147,13 @@ nmap <Leader>vs vip<Leader>vs<CR>
 "  fuzzy commands for vim - instead of needing leader mappings just fuzzy complete the viml function name (unite already has this one)
 
 "CtrlP mappings
-nnoremap <c-p><c-p> :CtrlP<CR>
-nnoremap <c-p><c-b> :CtrlPBuffer<CR>
-nnoremap <c-p><c-t> :CtrlPTag<CR>
+"nnoremap <c-p><c-p> :CtrlP<CR>
+"nnoremap <c-p><c-b> :CtrlPBuffer<CR>
+"nnoremap <c-p><c-t> :CtrlPTag<CR>
 """""nnoremap <leader><space> :CtrlPMRUFiles<CR>
+nnoremap <c-p><c-p> :echo "use fzf \<leader\>e"<CR>
+nnoremap <c-p><c-b> :echo "use fzf \<leader\>fb"<CR>
+nnoremap <c-p><c-t> :echo "use fzf \<leader\>ft"<CR>
 
 " Fugitive git shortcuts {{{2
 "nnoremap <Leader>gs :Gstatus<CR>
@@ -184,11 +187,21 @@ vnoremap <leader>gg y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep
 
 " Quick edit file list {{{2
 "nnoremap <Leader>ev :e ~/dotrc/vimrc<CR>
-nnoremap <Leader>ev :tabnew ~/dotrc/vimrc<CR>
+"nnoremap <Leader>ev :tabnew ~/dotrc/vimrc<CR>
 nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
-nnoremap <Leader>es :tabnew ~/dotrc/vimstickynotes.md<CR>
-nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
-nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
+"nnoremap <Leader>es :tabnew ~/dotrc/vimstickynotes.md<CR>
+"nnoremap <Leader>ea :tabnew ~/dotrc/vimannoyances.md<CR>
+"nnoremap <Leader>ep :tabnew ~/dotrc/projects.md<CR>
+
+" Trialing new FZF mappings
+" TODO: MRU plugin
+nnoremap <Leader>e :Files<CR>
+nnoremap <Leader>fb :Buffers<CR>
+"nnoremap <Leader>fh :Helptags<CR>
+":History is a cheap replacement for MRU
+nnoremap <Leader>fh :History<CR>
+nnoremap <Leader>ft :Tags<CR>
+nnoremap <Leader>fc :Commands<CR>
 
 
 " Randomness {{{2
@@ -198,7 +211,7 @@ nnoremap <leader>$ :%s/\s\+$//g<CR>
 
 nnoremap <leader>js :set filetype=javascript<CR>
 
-nnoremap <leader>e :Errors<CR>
+nnoremap <leader>E :Errors<CR>
 nnoremap <leader>y yy p k :call NERDComment(0, "norm")<CR> j
 
 "quick indentation checking
