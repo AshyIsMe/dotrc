@@ -206,6 +206,7 @@ nnoremap <Leader>fH :Helptags<CR>
 nnoremap <Leader>ft :Tags<CR>
 nnoremap <Leader>fT :BTags<CR>
 nnoremap <Leader>fc :Commands<CR>
+nnoremap <Leader>fl :Lines<CR>
 
 
 " Randomness {{{2
