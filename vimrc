@@ -202,6 +202,7 @@ nnoremap <Leader>ff :Locate ~<CR>
 nnoremap <Leader>fg :GitFiles<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fh :History<CR>
+nnoremap <Leader><Space> :History<CR>
 nnoremap <Leader>fH :Helptags<CR>
 nnoremap <Leader>ft :Tags<CR>
 nnoremap <Leader>fT :BTags<CR>
