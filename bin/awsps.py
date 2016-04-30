@@ -10,14 +10,20 @@
 #Dependencies: pip install boto3 tabulate
 #Set up your aws profile in ~/.aws/credentials (http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files)
 
-#TODO: Add profile as an argument: https://github.com/boto/boto3/pull/69
-
 import boto3
 import datetime
 from tabulate import tabulate
+import argparse
 
-ec2 = boto3.resource('ec2')
-cw = boto3.resource('cloudwatch')
+parser = argparse.ArgumentParser(description='List aws instances and cpu usage.')
+parser.add_argument('--profile', dest='profile', type=str, default='default',
+                    help='Choose the AWS profile (defaults to default profile)')
+
+args=parser.parse_args()
+
+session=boto3.session.Session(profile_name=args.profile)
+ec2 = session.resource('ec2')
+cw = session.resource('cloudwatch')
 cpu = cw.Metric('AWS/EC2', 'CPUUtilization')
 
 instancestats = []
