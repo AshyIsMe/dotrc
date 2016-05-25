@@ -8,6 +8,7 @@ set rtp+=~/.fzf
 
 " Section: Settings {{{1
 set relativenumber
+set number
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
