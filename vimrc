@@ -1,6 +1,7 @@
 " Section: Pathogen {{{1
 "Now using pathogen and git submodules to manage plugins
 execute pathogen#infect()
+Helptags
 syntax on
 filetype plugin indent on
 

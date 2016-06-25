@@ -94,3 +94,6 @@
 [submodule "dotvim/bundle/fzf"]
 	path = dotvim/bundle/fzf
 	url = https://github.com/junegunn/fzf
+[submodule "dotvim/bundle/vim-fsharp"]
+	path = dotvim/bundle/vim-fsharp
+	url = https://github.com/fsharp/vim-fsharp
