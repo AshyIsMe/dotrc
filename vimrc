@@ -119,43 +119,20 @@ vmap <Leader>P "*P
 "Clashes with this unfortunately
 "nnoremap <leader>p :set paste!<CR>:set paste?<CR>
 
-" vimux mappings
-map <Leader>vp :VimuxPromptCommand<CR>
-function! VimuxSlime()
-  call VimuxSendText(@v)
-  call VimuxSendKeys("Enter")
-endfunction
-" If text is selected, save it in the v buffer and send that buffer it to tmux
-vmap <Leader>vs "vy :call VimuxSlime()<CR>
-" Select current paragraph and send it to tmux
-nmap <Leader>vs vip<Leader>vs<CR>
+"" vimux mappings
+"map <Leader>vp :VimuxPromptCommand<CR>
+"function! VimuxSlime()
+  "call VimuxSendText(@v)
+  "call VimuxSendKeys("Enter")
+"endfunction
+"" If text is selected, save it in the v buffer and send that buffer it to tmux
+"vmap <Leader>vs "vy :call VimuxSlime()<CR>
+"" Select current paragraph and send it to tmux
+"nmap <Leader>vs vip<Leader>vs<CR>
 
 "Why walk when you can fly?
 "http://bairuidahu.deviantart.com/art/Flying-vs-Cycling-261641977
 "nnoremap <Leader>l :ls<CR>:b<space>
-
-
-" Fuzzy Finding {{{2
-"
-" CtrlP is great but not comprehensive.
-" Who dares wins?  Fzf or Unite?
-"
-" Features wanted:
-"  Files
-"  Buffers
-"  Tags
-"  Registers - keybinds to yank/paste
-"  OmniComplete - fuzzy completions
-"  fuzzy commands for vim - instead of needing leader mappings just fuzzy complete the viml function name (unite already has this one)
-
-"CtrlP mappings
-"nnoremap <c-p><c-p> :CtrlP<CR>
-"nnoremap <c-p><c-b> :CtrlPBuffer<CR>
-"nnoremap <c-p><c-t> :CtrlPTag<CR>
-"""""nnoremap <leader><space> :CtrlPMRUFiles<CR>
-nnoremap <c-p><c-p> :echo "use fzf \<leader\>e"<CR>
-nnoremap <c-p><c-b> :echo "use fzf \<leader\>fb"<CR>
-nnoremap <c-p><c-t> :echo "use fzf \<leader\>ft"<CR>
 
 " Fugitive git shortcuts {{{2
 "nnoremap <Leader>gs :Gstatus<CR>
@@ -189,6 +166,7 @@ vnoremap <leader>gg y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep
 
 " Quick edit file list {{{2
 "nnoremap <Leader>ev :e ~/dotrc/vimrc<CR>
+nnoremap <Leader>v :e ~/dotrc/vimrc<CR>
 "nnoremap <Leader>ev :tabnew ~/dotrc/vimrc<CR>
 nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
 "nnoremap <Leader>es :tabnew ~/dotrc/vimstickynotes.md<CR>
@@ -268,8 +246,9 @@ let g:haskell_conceal = 0
 
 "Haskell codex stuff (https://github.com/aloiscochard/codex)
 set tags=tags;/,codex.tags;/
-:au BufWritePost *.cabal exec "!codex update &"
-:au BufWritePost *.cabal exec "!hasktags -c '%:h' &"
+:au BufWritePost *.cabal exec "silent !codex update &>/dev/null &"
+:au BufWritePost *.cabal exec "silent !hasktags -c '%:h' &>/dev/null &"
+:au BufWritePost *.cabal redraw
 "AA TODO: Do the same with this command:
 "find . | grep "\.hs" | xargs hscope -b
 "Steal the hscope settings from here: https://github.com/begriffs/haskell-vim-now
