@@ -97,3 +97,18 @@
 [submodule "dotvim/bundle/vim-fsharp"]
 	path = dotvim/bundle/vim-fsharp
 	url = https://github.com/fsharp/vim-fsharp
+[submodule "dotvim/bundle/vim-orgmode"]
+	path = dotvim/bundle/vim-orgmode
+	url = https://github.com/jceb/vim-orgmode
+[submodule "dotvim/bundle/utl.vim"]
+	path = dotvim/bundle/utl.vim
+	url = https://github.com/vim-scripts/utl.vim
+[submodule "dotvim/bundle/vim-speeddating"]
+	path = dotvim/bundle/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating
+[submodule "dotvim/bundle/calendar-vim"]
+	path = dotvim/bundle/calendar-vim
+	url = https://github.com/mattn/calendar-vim
+[submodule "dotvim/bundle/SyntaxRange"]
+	path = dotvim/bundle/SyntaxRange
+	url = https://github.com/vim-scripts/SyntaxRange
