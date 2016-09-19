@@ -26,6 +26,19 @@ set noswapfile
 set autoindent
 set foldmethod=marker
 
+" Update tmux pane names
+" Teach vim the tmux escape sequences for changing pane title
+" Note the "^[" should be a literal escape code (use `^v<esc>` to enter it)
+if exists('$TMUX')
+  set t_ts=]2;
+  set t_fs=\\
+  augroup RefreshTitle
+    autocmd!
+    autocmd BufEnter * let &titlestring = ' ' . expand("%:p:.")
+  augroup END
+  set title
+endif
+
 " Trailing Whitespace {{{1
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -176,6 +189,7 @@ nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
 " Trialing new FZF mappings
 " TODO: MRU plugin
 ":History is a cheap replacement for MRU
+" TODO :Ag hotkey.  Change to use only git files
 nnoremap <Leader>a :Ag<CR>
 nnoremap <Leader>e :Files<CR>
 nnoremap <Leader>ff :Locate ~<CR>
@@ -188,6 +202,18 @@ nnoremap <Leader>ft :Tags<CR>
 nnoremap <Leader>fT :BTags<CR>
 nnoremap <Leader>fc :Commands<CR>
 nnoremap <Leader>fl :Lines<CR>
+nnoremap <Leader>fm :Maps<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :AgHistory hotkey.  Like :Ag but searches through files from History
+command! AgHistory call fzf#vim#ag_raw(shellescape('^(?=.)').' '.
+\ join(map(filter(copy(v:oldfiles), 'filereadable(expand(v:val))'), 'shellescape(expand(v:val))')),
+\ {'down': '40%'})
+
+" Mnemonic fp for Fzf Previous.  fh and fH already in use.
+nnoremap <Leader>fp :AgHistory<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -246,6 +272,7 @@ let g:haskell_conceal = 0
 
 "Haskell codex stuff (https://github.com/aloiscochard/codex)
 set tags=tags;/,codex.tags;/
+"AA TODO: Use the new vim8 jobs for this
 :au BufWritePost *.cabal exec "silent !codex update &>/dev/null &"
 :au BufWritePost *.cabal exec "silent !hasktags -c '%:h' &>/dev/null &"
 :au BufWritePost *.cabal redraw
