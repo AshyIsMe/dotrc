@@ -67,9 +67,6 @@
 [submodule "dotvim/bundle/--force"]
 	path = dotvim/bundle/--force
 	url = https://github.com/eagletmt/ghcmod-vim
-[submodule "dotvim/bundle/ghcmod-vim"]
-	path = dotvim/bundle/ghcmod-vim
-	url = https://github.com/eagletmt/ghcmod-vim
 [submodule "dotvim/bundle/vim-ps1"]
 	path = dotvim/bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1
@@ -112,3 +109,6 @@
 [submodule "dotvim/bundle/SyntaxRange"]
 	path = dotvim/bundle/SyntaxRange
 	url = https://github.com/vim-scripts/SyntaxRange
+[submodule "dotvim/bundle/vim-hdevtools"]
+	path = dotvim/bundle/vim-hdevtools
+	url = https://github.com/bitc/vim-hdevtools
