@@ -94,9 +94,9 @@ let mapleader = " "
 map <Leader>cd :lcd %:p:h<CR>
 
 " Randomness {{{2
-noremap ; :
+"noremap ; :
 "noremap ;; ;
-map ;; <Plug>fanfingtastic_;
+"map ;; <Plug>fanfingtastic_;
 
 nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable          = 1
@@ -159,7 +159,7 @@ nnoremap <Leader>gl :Glog<CR>
 "browse in github or instaweb
 "
 "Exit out of diff mode with: <C-w><C-o>
-nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gd :Gvdiff<CR>
 nnoremap <Leader>gm :Gmove<CR>
 nnoremap <Leader>gp :Git push
 
@@ -253,8 +253,9 @@ endfunction
 " Haskell bindings {{{2
 augroup HaskellMappings
   autocmd!
-  autocmd FileType haskell nnoremap <Leader>ht :GhcModType<CR>
-  autocmd FileType haskell nnoremap <Leader>hT :GhcModTypeInsert<CR>
+  "autocmd FileType haskell nnoremap <Leader>ht :GhcModType<CR>
+  "autocmd FileType haskell nnoremap <Leader>hT :GhcModTypeInsert<CR>
+  autocmd FileType haskell nnoremap <Leader>ht :HdevtoolsType<CR>
   autocmd FileType haskell nnoremap <Leader>hr :!cabal run<CR>
   autocmd FileType haskell nnoremap <Leader>hb :!cabal build<CR>
 augroup END
