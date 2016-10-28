@@ -1,0 +1,35 @@
+#!/bin/bash
+
+## toggle-hdmi-sound
+## Toggles between hdmi and onboard audio.
+
+currentSoundDevice=$(readlink -f "$HOME/.asoundrc")
+
+if [[ "$currentSoundDevice" == "$HOME/asoundrc-onboard" ]]; then
+  ln -sf "$HOME/asoundrc-hdmi" "$HOME/.asoundrc"
+  alsactl restore
+elif [[ "$currentSoundDevice" == "$HOME/asoundrc-hdmi" ]]; then
+  ln -sf "$HOME/asoundrc-onboard" "$HOME/.asoundrc"
+  alsactl restore
+fi
+
+
+# NOTE: The above relies on these two files existing already !!!
+# Create these files in $HOME and then make sure the card and 
+# device numbers are correct for your machine.
+# Find the card/device numbers by running: aplay -l
+# (Also, create the symlink initially)
+
+## File: $HOME/asoundrc-onboard
+# pcm.!default {
+#   type hw
+#   card 0
+#   device 0
+# }
+
+## File: $HOME/asoundrc-hdmi
+# pcm.!default {
+#   type hw
+#   card 0
+#   device 3
+# }

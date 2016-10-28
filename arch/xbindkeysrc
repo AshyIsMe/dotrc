@@ -1,0 +1,5 @@
+"amixer set Master 5%+"
+  XF86AudioRaiseVolume
+
+"amixer set Master 5%-"
+  XF86AudioLowerVolume
