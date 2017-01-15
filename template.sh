@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+#set -euf -o pipefail  #use this? From https://sipb.mit.edu/doc/safe-shell/
 
 ## This is a template bash script with usage docs and arg parsing
 ## Usage: template.sh [options]
