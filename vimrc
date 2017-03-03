@@ -28,6 +28,9 @@ set noswapfile
 set autoindent
 set foldmethod=marker
 
+" orgmode {{{2
+let g:org_agenda_files=['~/Dropbox/orgmode/*.org']
+
 " Update tmux pane names
 " Teach vim the tmux escape sequences for changing pane title
 " Note the "^[" should be a literal escape code (use `^v<esc>` to enter it)

@@ -32,11 +32,16 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+#bindsym $mod+Escape exec i3lock
+bindsym $mod+Escape exec systemctl suspend
+bindsym $mod+BackSpace exec feh --randomize --bg-fill ~/Pictures/Space\ Themed\ Wallpapers\ -\ Imgur/*
+
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -l 20
+#bindsym $mod+d exec dmenu_run -l 20
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -44,9 +49,10 @@ bindsym $mod+d exec dmenu_run -l 20
 
 # run rofi (a program launcher, see https://davedavenport.github.io/rofi/)
 # AA TODO: Use dmenu-extended with rofi
-bindsym $mod+space exec i3-dmenu-desktop --dmenu="rofi -i -dmenu -font 'ubuntu mono 18' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc '#111111'"
-bindsym $mod+Shift+space exec rofi -i -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
-#bindsym $mod+Tab exec rofi -i -show window -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+bindsym $mod+d exec i3-dmenu-desktop --dmenu="rofi -i -dmenu -font 'ubuntu mono 18' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc '#111111'"
+#bindsym $mod+Shift+space exec rofi -i -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+bindsym $mod+space exec rofi -i -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+bindsym $mod+Shift+space exec rofi -i -show window -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
 
 # change focus
 bindsym $mod+h focus left
@@ -162,3 +168,32 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+exec --no-startup-id nm-applet
+exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Space\ Themed\ Wallpapers\ -\ Imgur/*
+
+# Media keys
+# Pulse Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
+
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
+# Touchpad controls
+#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Middle click
+exec synclient TapButton3=2
