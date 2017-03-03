@@ -112,3 +112,6 @@
 [submodule "dotvim/bundle/vim-hdevtools"]
 	path = dotvim/bundle/vim-hdevtools
 	url = https://github.com/bitc/vim-hdevtools
+[submodule "dotvim/bundle/ansible-vim"]
+	path = dotvim/bundle/ansible-vim
+	url = https://github.com/pearofducks/ansible-vim

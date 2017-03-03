@@ -15,9 +15,11 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set ignorecase
-colorscheme zenburn
-"colorscheme desert
 syntax enable
+"set background=light
+set background=dark
+"colorscheme zenburn
+colorscheme solarized
 let &t_Co=256
 set hlsearch
 set hidden
@@ -303,7 +305,17 @@ if executable('ag')
 endif
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp/'
 
+
+" ansible {{{2
+augroup AnsibleFiletypes
+  autocmd!
+  autocmd Bufread,BufNewFile playbook*.yaml set ft=ansible
+  autocmd Bufread,BufNewFile playbook*.yml set ft=ansible
+  autocmd Bufread,BufNewFile *inventory set ft=ansible_hosts
+augroup END
+
 " finally {{{2
 " Not sure if this actually has to be last
 set foldlevelstart=10
 
+set visualbell
