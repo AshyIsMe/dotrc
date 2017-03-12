@@ -18,8 +18,8 @@ set ignorecase
 syntax enable
 "set background=light
 set background=dark
-"colorscheme zenburn
-colorscheme solarized
+colorscheme zenburn
+"colorscheme solarized
 let &t_Co=256
 set hlsearch
 set hidden
