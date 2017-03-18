@@ -26,6 +26,36 @@ font pango:DejaVu Sans Mono 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# Colours arghaonethuntth
+
+## Solarized Dark
+#set $S_base03        #002b36
+#set $S_base02        #073642
+#set $S_base01        #586e75
+#set $S_base00        #657b83
+#set $S_base0         #839496
+#set $S_base1         #93a1a1
+#set $S_base2         #eee8d5
+#set $S_base3         #fdf6e3
+
+# Solarized Light
+set $S_base03        #fdf6e3
+set $S_base02        #eee8d5
+set $S_base01        #93a1a1
+set $S_base00        #839496
+set $S_base0         #657b83
+set $S_base1         #586e75
+set $S_base2         #073642
+set $S_base3         #002b36
+
+#class                 border  backgr. text    indicator child_border
+client.focused          $S_base03 $S_base02 $S_base3 #268bd2
+client.focused_inactive $S_base03 $S_base01 $S_base0 $S_base02
+client.unfocused        $S_base03 $S_base01 $S_base0 $S_base02
+client.urgent           $S_base03 #dc322f $S_base3 $S_base03
+
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -34,7 +64,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 #bindsym $mod+Escape exec i3lock
 bindsym $mod+Escape exec systemctl suspend
-bindsym $mod+BackSpace exec feh --randomize --bg-fill ~/Pictures/Space\ Themed\ Wallpapers\ -\ Imgur/*
+#bindsym $mod+BackSpace exec feh --randomize --bg-fill ~/Pictures/Space\ Themed\ Wallpapers\ -\ Imgur/*
+bindsym $mod+BackSpace exec feh --randomize --bg-fill ~/Dropbox/Photos/SpaceWallpapers/*
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -51,8 +82,15 @@ bindsym Mod1+F4 kill
 # AA TODO: Use dmenu-extended with rofi
 bindsym $mod+d exec i3-dmenu-desktop --dmenu="rofi -i -dmenu -font 'ubuntu mono 18' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc '#111111'"
 #bindsym $mod+Shift+space exec rofi -i -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
-bindsym $mod+space exec rofi -i -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+#bindsym $mod+space exec rofi -i -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+#rofi -combi-modi window,drun -show combi -modi combi
+bindsym $mod+space exec "rofi -combi-modi window,drun -show combi -modi combi"
 bindsym $mod+Shift+space exec rofi -i -show window -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+
+bindsym Print exec scrot 'Screenshot_%Y-%m-%d_%H%M%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
+
+bindsym $mod+F7 exec xrandr --auto
+
 
 # change focus
 bindsym $mod+h focus left
@@ -167,10 +205,26 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        #tray_output primary
+        #separator_symbol " | "
+        colors {
+							background $S_base03
+							statusline $S_base0
+							separator $S_base01
+							focused_workspace  #b58900 #b58900 $S_base03
+							active_workspace   $S_base01 $S_base01 $S_base03
+							inactive_workspace #073642  $S_base03 $S_base0
+							urgent_workspace   #dc322f #dc322f #fdf6e3
+        }
 }
 
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Space\ Themed\ Wallpapers\ -\ Imgur/*
+exec --no-startup-id blueman-applet
+exec --no-startup-id pasystray
+#exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Space\ Themed\ Wallpapers\ -\ Imgur/*
+exec --no-startup-id feh --randomize --bg-fill ~/Dropbox/Photos/SpaceWallpapers/*
+exec xrandr --dpi 288
+exec xset m 0 0
 
 # Media keys
 # Pulse Audio controls
@@ -183,8 +237,10 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec sudo /home/aaron/bin/brightness.sh +2 # increase screen brightness
+bindsym XF86MonBrightnessDown exec sudo /home/aaron/bin/brightness.sh -2 # decrease screen brightness
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -197,3 +253,4 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Middle click
 exec synclient TapButton3=2
+
