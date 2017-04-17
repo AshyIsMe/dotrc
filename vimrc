@@ -247,7 +247,9 @@ no <Up>    <C-w>+
 no <Left>  <C-w><
 no <Right> <C-w>>
 
-nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+"nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+nnoremap <Leader>G :silent :grep! "\b<C-R><C-W>\b"<CR>:cw<CR> :redraw!<CR>
+
 
 function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
