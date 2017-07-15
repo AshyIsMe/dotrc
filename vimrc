@@ -15,9 +15,11 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set ignorecase
-colorscheme zenburn
-"colorscheme desert
 syntax enable
+"set background=light
+set background=dark
+colorscheme zenburn
+"colorscheme solarized
 let &t_Co=256
 set hlsearch
 set hidden
@@ -25,6 +27,9 @@ set nobackup
 set noswapfile
 set autoindent
 set foldmethod=marker
+
+" orgmode {{{2
+let g:org_agenda_files=['~/Dropbox/orgmode/*.org']
 
 " Update tmux pane names
 " Teach vim the tmux escape sequences for changing pane title
@@ -243,7 +248,9 @@ no <Up>    <C-w>+
 no <Left>  <C-w><
 no <Right> <C-w>>
 
-nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+"nnoremap <Leader>G :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+nnoremap <Leader>G :silent :grep! "\b<C-R><C-W>\b"<CR>:cw<CR> :redraw!<CR>
+
 
 function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
@@ -304,7 +311,17 @@ if executable('ag')
 endif
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp/'
 
+
+" ansible {{{2
+augroup AnsibleFiletypes
+  autocmd!
+  autocmd Bufread,BufNewFile playbook*.yaml set ft=ansible
+  autocmd Bufread,BufNewFile playbook*.yml set ft=ansible
+  autocmd Bufread,BufNewFile *inventory set ft=ansible_hosts
+augroup END
+
 " finally {{{2
 " Not sure if this actually has to be last
 set foldlevelstart=10
 
+set visualbell

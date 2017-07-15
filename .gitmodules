@@ -112,3 +112,9 @@
 [submodule "dotvim/bundle/vim-hdevtools"]
 	path = dotvim/bundle/vim-hdevtools
 	url = https://github.com/bitc/vim-hdevtools
+[submodule "dotvim/bundle/ansible-vim"]
+	path = dotvim/bundle/ansible-vim
+	url = https://github.com/pearofducks/ansible-vim
+[submodule "dotvim/bundle/vim-airline"]
+	path = dotvim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
