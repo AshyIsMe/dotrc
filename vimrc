@@ -160,7 +160,8 @@ nnoremap <leader>gs :Gstatus<CR><C-W><S-T>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gB :Gbrowse<CR>
-nnoremap <Leader>gl :Glog<CR>
+nnoremap <Leader>gl :silent Glog <Bar> copen <CR> 
+
 "browse in github or instaweb
 "
 "Exit out of diff mode with: <C-w><C-o>
