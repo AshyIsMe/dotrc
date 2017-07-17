@@ -2,7 +2,7 @@
 
 default:
 
-install: install-vim install-tmux install-screen install-ghci
+install: install-vim install-tmux install-screen install-ghci install-psql
 
 VIMRC=$(HOME)/.vimrc
 DOTVIM=$(HOME)/.vim
@@ -52,9 +52,19 @@ install-ghci: backup-ghci
 uninstall-ghci:
 	if [ -a "$(GHCCONF).old" ]; then mv $(GHCCONF).old $(GHCCONF) ; fi
 
+PSQLRC=$(HOME)/.psqlrc
+backup-psql:
+	if [ -a "$(PSQLRC)" ]; then mv $(PSQLRC) $(PSQLRC).old ; fi
+
+install-psql: backup-psql
+	ln -s $(CURDIR)/psqlrc $(PSQLRC)
+
+uninstall-psql:
+	if [ -a "$(PSQLRC).old" ]; then mv $(PSQLRC).old $(PSQLRC) ; fi
 
 uninstall: uninstall-vim \
 					 uninstall-vim \
 					 uninstall-tmux \
 					 uninstall-screen \
-					 uninstall-ghci
+					 uninstall-ghci \
+					 uninstall-psql
