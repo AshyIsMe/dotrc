@@ -54,14 +54,14 @@ set listchars+=trail:-
 
 
 " Section: Statusline - TODO: airline or better {{{1
-set statusline=%f
-set statusline+=%m
-set statusline+=\ \ %{getcwd()}
-"set statusline+=%{RandomStickyLine()}
-set statusline+=%=
-set statusline+=Stickies:
-let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
-set statusline+=%{stickiescount}
+"set statusline=%f
+"set statusline+=%m
+"set statusline+=\ \ %{getcwd()}
+""set statusline+=%{RandomStickyLine()}
+"set statusline+=%=
+"set statusline+=Stickies:
+"let stickiescount=system("grep \"*\" ~/dotrc/vimstickynotes.md | wc -l | tr -d ' \n'")
+"set statusline+=%{stickiescount}
 
 function! RandomStickyLine()
   let randomsticky=" | Random Sticky: " . system("grep \"*\" ~/dotrc/vimstickynotes.md | head -$((${RANDOM} % `grep \"*\" ~/dotrc/vimstickynotes.md | wc -l` + 1)) | tail -1 | tr -d '*\n'")
@@ -318,6 +318,13 @@ augroup AnsibleFiletypes
   autocmd Bufread,BufNewFile playbook*.yml set ft=ansible
   autocmd Bufread,BufNewFile *inventory set ft=ansible_hosts
 augroup END
+
+" Python {{{2
+"augroup PythonFiletypes
+  "autocmd!
+"autocmd FileType python set tabstop=4 set softtabstop=4 set shiftwidth=4 set textwidth=79 set expandtab set autoindent set fileformat=unix
+autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab
+"augroup END
 
 " finally {{{2
 " Not sure if this actually has to be last
