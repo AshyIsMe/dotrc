@@ -1,0 +1,42 @@
+---
+
+- hosts: all
+  tasks:
+  #- name: Install Mosh PPA
+    #apt_repository: repo: 'ppa:keithw/mosh'
+
+  - name: Install Mosh
+    become: true
+    apt:
+      state: latest
+      pkg: mosh
+      update_cache: yes
+
+  - name: Copy Mosh Allow UFW script
+    become: true
+    copy:
+      src: mosh-allow-ufw.sh
+      dest: /usr/local/bin/mosh-allow-ufw
+      owner: root
+      group: root
+      mode: 0755
+
+  - name: Mosh allow into bashrc
+    become: true
+    lineinfile:
+      dest: /home/{{ item }}/.bashrc
+      line: "sudo /usr/local/bin/mosh-allow-ufw"
+      regexp: 'mosh-allow-ufw'
+      state: present
+    with_items:
+      - aaron
+
+  - name: Mosh allow into sudoers
+    become: true
+    lineinfile:
+      dest: /etc/sudoers
+      line: "{{ item }} ALL=(ALL:ALL) NOPASSWD: /usr/local/bin/mosh-allow-ufw"
+      regexp: 'mosh-allow-ufw'
+      state: present
+    with_items:
+      - aaron
