@@ -2,6 +2,10 @@
 
 #Do something that's similar to "du -sm * | sort -nr" except with htop style usage graphs
 
+echo "CANCELLED!"
+echo "Install and use ncdu instead"
+exit 42
+
 function drawgraph {
   # drawgraph $totalsize $itemsize $itemname
   args=$@
