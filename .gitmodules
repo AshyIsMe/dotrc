@@ -118,3 +118,6 @@
 [submodule "dotvim/bundle/vim-airline"]
 	path = dotvim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "dotvim/bundle/ale"]
+	path = dotvim/bundle/ale
+	url = https://github.com/w0rp/ale
