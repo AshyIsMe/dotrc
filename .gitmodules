@@ -37,9 +37,6 @@
 [submodule "dotvim/bundle/supertab"]
 	path = dotvim/bundle/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "dotvim/bundle/syntastic"]
-	path = dotvim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
 [submodule "dotvim/bundle/tagbar"]
 	path = dotvim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
