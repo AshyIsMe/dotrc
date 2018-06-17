@@ -330,20 +330,42 @@ you should place your code here."
   ;; Orgmode setup
   (setq org-directory "~/Sync/orgmode")
   (setq org-agenda-files (quote ("~/Sync/orgmode")))
-  (with-eval-after-load
-      ;; Work around for issue: https://github.com/syl20bnr/spacemacs/issues/9748
-      'org (setq org-default-notes-file "~/Sync/orgmode/notes.org"))
-  (setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                   (org-agenda-files :maxlevel . 9))))
-  ;; Stolen from http://doc.norang.ca/org-mode.html#Refiling
-  (defun bh/verify-refile-target ()
-    "Exclude todo keywords with a done state from refile targets"
-    (not (member (nth 2 (org-heading-components)) org-done-keywords)))
-  (setq org-refile-target-verify-function 'bh/verify-refile-target)
-  (setq org-fast-todo-selection t)
-  (setq org-todo-keywords
-        (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-                (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
+  (with-eval-after-load 'org
+    ;; Work around for issue: https://github.com/syl20bnr/spacemacs/issues/9748
+
+    (setq org-default-notes-file "~/Sync/orgmode/notes.org")
+    (setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                    (org-agenda-files :maxlevel . 9))))
+    ;; Stolen from http://doc.norang.ca/org-mode.html#Refiling
+    (defun bh/verify-refile-target ()
+      "Exclude todo keywords with a done state from refile targets"
+      (not (member (nth 2 (org-heading-components)) org-done-keywords)))
+    (setq org-refile-target-verify-function 'bh/verify-refile-target)
+    (setq org-fast-todo-selection t)
+    (setq org-todo-keywords
+          (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+                  (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
+
+    (setq org-capture-templates
+          (quote (("t" "todo" entry (file "~/Sync/orgmode/notes.org")
+                  "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+                  ("n" "note" entry (file+headline "~/Sync/orgmode/notes.org" "Notes")
+                  "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+                  ("m" "Meeting" entry (file "~/Sync/orgmode/notes.org")
+                  "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+                  ("p" "Phone call" entry (file "~/Sync/orgmode/notes.org")
+                  "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+                  )))
+
+    (setq org-todo-state-tags-triggers
+          (quote (("CANCELLED" ("CANCELLED" . t))
+                  ("WAITING" ("WAITING" . t))
+                  ("HOLD" ("WAITING") ("HOLD" . t))
+                  (done ("WAITING") ("HOLD"))
+                  ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
+                  ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
+                  ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+  )
 
   ;; Custom Mappings
   ;; ~SPC o~ and ~SPC m o~ are reserved for the user.
