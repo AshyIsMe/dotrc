@@ -9,6 +9,9 @@ source ~/.bash_apikeys
 export PATH=$PATH:~/bin
 #export PATH=/usr/local/bin:$PATH #Only needed on osx?
 source ~/.fzf.bash
+if command -v fzf-share >/dev/null; then
+  source "$(fzf-share)/key-bindings.bash"
+fi
 
 #set -o vi
 export EDITOR=vim
