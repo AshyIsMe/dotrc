@@ -25,9 +25,9 @@ PROMPT_COMMAND='echo -ne "\033]0;\007"'
 
 
 # AA TODO On OSX only...
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  #. $(brew --prefix)/etc/bash_completion
+#fi
 
 # No idea where this came from or why I needed it...
 first ()
@@ -65,9 +65,10 @@ export PS1="\n\u@\h:\w \$(git branch --color 2> /dev/null | tr -d '\n') \n\$ "
 #haskell stack binaries path
 export PATH=~/.local/bin:$PATH
 
-source ~/CodeBases/fzf_browser/fzf_browser.sh
+#source ~/CodeBases/fzf_browser/fzf_browser.sh
 
 # Crappy extended dmenu style thing
 #source ~/CodeBases/fzfOS/fzfOS.sh
 
-source ~/bin/z-repos/z.sh
+#source ~/bin/z-repos/z.sh
+source ~/bin/z/z.sh
