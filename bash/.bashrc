@@ -24,7 +24,7 @@ export FZF_DEFUALT_OPS="--sort 10000"
 PROMPT_COMMAND='echo -ne "\033]0;\007"'
 
 
-## AA TODO On OSX only...
+# AA TODO On OSX only...
 #if [ -f $(brew --prefix)/etc/bash_completion ]; then
   #. $(brew --prefix)/etc/bash_completion
 #fi
@@ -70,4 +70,5 @@ export PATH=~/.local/bin:$PATH
 # Crappy extended dmenu style thing
 #source ~/CodeBases/fzfOS/fzfOS.sh
 
-source ~/bin/z-repos/z.sh
+#source ~/bin/z-repos/z.sh
+source ~/bin/z/z.sh
