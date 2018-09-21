@@ -220,6 +220,20 @@ bar {
         }
 }
 
+# Plasma + i3wm
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [title="Preferences$"] floating enable
+for_window [title="Install user style"] floating enable
+for_window [title="KCalc"] floating enable
+for_window [class="plasmashell"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+exec --no-startup-id pkill kwin
+
+
 exec "setxkbmap -layout dvorak"
 
 exec --no-startup-id nm-applet
@@ -228,7 +242,7 @@ exec --no-startup-id pasystray
 #exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Space\ Themed\ Wallpapers\ -\ Imgur/*
 exec --no-startup-id feh --randomize --bg-fill ~/Dropbox/Photos/SpaceWallpapers/*
 #exec xrandr --dpi 288
-exec xrandr --dpi 163
+#exec xrandr --dpi 163
 exec xset m 0 0
 exec --no-startup-id redshift-gtk
 exec --no-startup-id syncthing-gtk
