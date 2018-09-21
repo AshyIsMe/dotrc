@@ -4,7 +4,7 @@ export HISTFILESIZE=100000               # big big history
 shopt -s histappend                      # append to history, don't overwrite it
 
 # API Keys are exported in this script that is not commited to the public repo obviously...
-source ~/.bash_apikeys
+#source ~/.bash_apikeys
 
 export PATH=$PATH:~/bin
 #export PATH=/usr/local/bin:$PATH #Only needed on osx?
@@ -24,10 +24,10 @@ export FZF_DEFUALT_OPS="--sort 10000"
 PROMPT_COMMAND='echo -ne "\033]0;\007"'
 
 
-# AA TODO On OSX only...
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+## AA TODO On OSX only...
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  #. $(brew --prefix)/etc/bash_completion
+#fi
 
 # No idea where this came from or why I needed it...
 first ()
@@ -65,7 +65,7 @@ export PS1="\n\u@\h:\w \$(git branch --color 2> /dev/null | tr -d '\n') \n\$ "
 #haskell stack binaries path
 export PATH=~/.local/bin:$PATH
 
-source ~/CodeBases/fzf_browser/fzf_browser.sh
+#source ~/CodeBases/fzf_browser/fzf_browser.sh
 
 # Crappy extended dmenu style thing
 #source ~/CodeBases/fzfOS/fzfOS.sh
