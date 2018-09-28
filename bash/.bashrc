@@ -4,7 +4,7 @@ export HISTFILESIZE=100000               # big big history
 shopt -s histappend                      # append to history, don't overwrite it
 
 # API Keys are exported in this script that is not commited to the public repo obviously...
-source ~/.bash_apikeys
+#source ~/.bash_apikeys
 
 export PATH=$PATH:~/bin
 #export PATH=/usr/local/bin:$PATH #Only needed on osx?
