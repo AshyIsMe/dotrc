@@ -13,10 +13,10 @@ Using gnu-stow with the workflow described here:
 git clone --recursive https://github.com/AshyIsMe/dotrc
 cd dotrc
 
-stow arch
 stow bash
 stow ghc
 stow git
+stow plasma
 stow i3
 stow i3status
 stow screen
