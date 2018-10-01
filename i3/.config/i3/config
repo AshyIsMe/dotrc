@@ -255,13 +255,13 @@ exec --no-startup-id syncthing-gtk
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 5
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 5
+bindsym XF86AudioMute exec --no-startup-id pamixer -t
 #Set up hotkeys for Alt+arrows for volume
-bindsym Mod1+Up exec --no-startup-id amixer -D pulse sset Master 5%+
-bindsym Mod1+Down exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym Mod1+Shift+Down exec --no-startup-id amixer -D pulse set Master 1+ toggle
+bindsym Mod1+Up exec --no-startup-id --no-startup-id pamixer --increase 5
+bindsym Mod1+Down exec --no-startup-id pamixer --decrease 5
+bindsym Mod1+Shift+Down exec --no-startup-id pamixer -t
 
 # Multiple Monitor bindings
 
