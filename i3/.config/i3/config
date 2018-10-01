@@ -204,35 +204,35 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#  position bottom
-#  status_command i3status
-#  #tray_output primary
-#  #separator_symbol " | "
-#  colors {
-#    background $S_base03
-#    statusline $S_base0
-#    separator $S_base01
-#    focused_workspace  #b58900 #b58900 $S_base03
-#    active_workspace   $S_base01 $S_base01 $S_base03
-#    inactive_workspace #073642  $S_base03 $S_base0
-#    urgent_workspace   #dc322f #dc322f #fdf6e3
-#  }
-#}
+bar {
+  position bottom
+  status_command i3status
+  #tray_output primary
+  #separator_symbol " | "
+  colors {
+    background $S_base03
+    statusline $S_base0
+    separator $S_base01
+    focused_workspace  #b58900 #b58900 $S_base03
+    active_workspace   $S_base01 $S_base01 $S_base03
+    inactive_workspace #073642  $S_base03 $S_base0
+    urgent_workspace   #dc322f #dc322f #fdf6e3
+  }
+}
 
-# Plasma + i3wm
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [title="Preferences$"] floating enable
-for_window [title="Install user style"] floating enable
-for_window [title="KCalc"] floating enable
-for_window [class="plasmashell"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-exec --no-startup-id pkill kwin
-exec --no-startup-id wmctrl -c Plasma
+# # Plasma + i3wm
+# for_window [window_role="pop-up"] floating enable
+# for_window [window_role="task_dialog"] floating enable
+# for_window [title="Preferences$"] floating enable
+# for_window [title="Install user style"] floating enable
+# for_window [title="KCalc"] floating enable
+# for_window [class="plasmashell"] floating enable
+# for_window [window_role="pop-up"] floating enable
+# for_window [window_role="task_dialog"] floating enable
+# for_window [window_type="dialog"] floating enable
+# for_window [window_type="menu"] floating enable
+# exec --no-startup-id pkill kwin
+#exec --no-startup-id wmctrl -c Plasma
 
 
 exec "setxkbmap -layout dvorak"
@@ -246,22 +246,22 @@ exec --no-startup-id feh --randomize --bg-fill ~/Dropbox/Photos/SpaceWallpapers/
 #exec xrandr --dpi 288
 #exec xrandr --dpi 163
 exec xset m 0 0
-exec --no-startup-id redshift-gtk
-# exec --no-startup-id syncthing-gtk
+# exec --no-startup-id redshift-gtk
+exec --no-startup-id syncthing-gtk
 # exec --no-startup-id dropbox
 
-# # Media keys
-# # Pulse Audio controls
-# #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
-# #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
-# #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
-# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
-# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
-# bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
-# #Set up hotkeys for Alt+arrows for volume
-# bindsym Mod1+Up exec --no-startup-id amixer -D pulse sset Master 5%+
-# bindsym Mod1+Down exec --no-startup-id amixer -D pulse sset Master 5%-
-# bindsym Mod1+Shift+Down exec --no-startup-id amixer -D pulse set Master 1+ toggle
+# Media keys
+# Pulse Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
+#Set up hotkeys for Alt+arrows for volume
+bindsym Mod1+Up exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym Mod1+Down exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym Mod1+Shift+Down exec --no-startup-id amixer -D pulse set Master 1+ toggle
 
 # Multiple Monitor bindings
 
@@ -270,11 +270,11 @@ bindsym $mod+Mod1+Right move workspace to output right
 
 
 
-# # Sreen brightness controls
-# #bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-# #bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-# bindsym XF86MonBrightnessUp exec sudo /home/aaron/bin/brightness.sh +2 # increase screen brightness
-# bindsym XF86MonBrightnessDown exec sudo /home/aaron/bin/brightness.sh -2 # decrease screen brightness
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec sudo /home/aaron/bin/brightness.sh +2 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec sudo /home/aaron/bin/brightness.sh -2 # decrease screen brightness
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
