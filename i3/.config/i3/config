@@ -250,6 +250,8 @@ exec xset m 0 0
 exec --no-startup-id syncthing-gtk
 # exec --no-startup-id dropbox
 
+exec xautolock -time 1 -locker 'i3lock -i ~/Pictures/dscovr_transit.png -c 000000'
+
 # Media keys
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
