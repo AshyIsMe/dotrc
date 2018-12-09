@@ -35,4 +35,8 @@ Plugins managed with pathogen and git submodules in this repo.
 cd dotrc/vim/.vim/bundle
 git submodule add http://github.com/AshyIsMe/some-vim-plugin
 git commit -m "Added some vim plugin"
+
+# Removing old plugins
+git rm ./vim/.vim/bundle/SomeOldPlugin
+git commit -m "Aaaand it's gone."
 ```
