@@ -89,6 +89,7 @@ bindsym $mod+space exec "rofi -show-icons -combi-modi window,drun -show combi -m
 #bindsym $mod+Shift+space exec rofi -i -show window -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
 
 bindsym Print exec scrot 'Screenshot_%Y-%m-%d_%H%M%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
+bindsym --release $mod+Print exec scrot -s 'Screenshot_%Y-%m-%d_%H%M%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 bindsym $mod+F7 exec xrandr --auto
 
@@ -244,7 +245,7 @@ exec "setxkbmap -layout dvorak"
 #exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Space\ Themed\ Wallpapers\ -\ Imgur/*
 exec --no-startup-id feh --randomize --bg-fill ~/Dropbox/Photos/SpaceWallpapers/*
 #exec xrandr --dpi 288
-#exec xrandr --dpi 163
+exec xrandr --dpi 163
 exec xset m 0 0
 # exec --no-startup-id redshift-gtk
 exec --no-startup-id syncthing-gtk
