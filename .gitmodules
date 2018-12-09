@@ -19,9 +19,6 @@
 [submodule "dotvim/bundle/vim-fanfingtastic"]
 	path = vim/.vim/bundle/vim-fanfingtastic
 	url = https://github.com/dahu/vim-fanfingtastic
-[submodule "dotvim/bundle/SearchParty"]
-	path = vim/.vim/bundle/SearchParty
-	url = https://github.com/dahu/SearchParty
 [submodule "dotvim/bundle/vimproc.vim"]
 	path = vim/.vim/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
