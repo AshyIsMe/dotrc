@@ -112,7 +112,7 @@ nnoremap <leader>m :make<CR>
 "SearchParty does this <C-L> mapping now
 "nnoremap <silent> <C-L> :nohlsearch<Bar>redraw!<CR>
 "Help! I've lost my cursor and can't find it!
-"nnoremap <silent> <C-L> :set cursorline <bar> set cursorcolumn <bar> redraw <bar> sleep 80m <bar> set nocursorline <bar> set nocursorcolumn <bar> nohlsearch <bar> redraw! <CR>
+nnoremap <silent> <C-L> :set cursorline <bar> set cursorcolumn <bar> redraw <bar> sleep 80m <bar> set nocursorline <bar> set nocursorcolumn <bar> nohlsearch <bar> redraw! <CR>
 
 "make Y work like C and D
 map Y y$
