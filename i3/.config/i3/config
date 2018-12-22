@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 12
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -250,7 +250,7 @@ exec xset m 0 0
 exec --no-startup-id syncthing-gtk
 # exec --no-startup-id dropbox
 
-exec xautolock -time 1 -locker 'i3lock -i ~/Pictures/dscovr_transit.png -c 000000'
+exec xautolock -time 5 -locker 'i3lock -i ~/Pictures/dscovr_transit.png -c 000000'
 
 # Media keys
 # Pulse Audio controls
