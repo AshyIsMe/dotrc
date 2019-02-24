@@ -22,7 +22,8 @@ set $menu dmenu_run -l 15
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /nix/store/0fyncbqx6drz6bbd9vr2r519hk9wvkfg-sway-0.15.2/share/backgrounds/sway/)
-output * bg /nix/store/0fyncbqx6drz6bbd9vr2r519hk9wvkfg-sway-0.15.2/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /nix/store/0fyncbqx6drz6bbd9vr2r519hk9wvkfg-sway-0.15.2/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -49,9 +50,9 @@ font pango:DejaVu Sans Mono 8
 # Read `man 5 sway-input` for more information about this section.
 # Also read: https://github.com/swaywm/sway/wiki
 # See `man 7 xkeyboard-config` for options you can use with the xkb_layout, xkb_model, xkb_options, xkb_rules, and xkb_variant commands.
+# Capslock is the best key when it's actually Esc when tapped *and* Ctrl when chorded
+# I'm now using caps2esc to achieve this at a lower level than xorg/wayland (so no more xcape needed)
 input "1:1:AT_Translated_Set_2_keyboard" {
-    # Capslock is the best key when it's actually Esc when tapped *and* Ctrl when chorded
-    # I'm now using caps2esc to achieve this at a lower level than xorg/wayland (so no more xcape needed)
     #xkb_options ctrl:nocaps # Capslock is actually ctrl
     xkb_layout dvorak
 }
@@ -59,6 +60,15 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
   dwt enabled
   tap enabled
   middle_emulation enabled
+}
+
+# Filco minila usb mode
+input "1204:4621:Convertible_2_TKL" {
+    xkb_layout dvorak
+}
+# Filco minila bluetooth mode
+input "2652:34050:Convertible_2_TKL_Keyboard" {
+    xkb_layout dvorak
 }
 
 ### Key bindings
