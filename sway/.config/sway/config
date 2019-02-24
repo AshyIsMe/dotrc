@@ -23,7 +23,11 @@ set $menu dmenu_run -l 15
 #
 # Default wallpaper (more resolutions are available in /nix/store/0fyncbqx6drz6bbd9vr2r519hk9wvkfg-sway-0.15.2/share/backgrounds/sway/)
 #output * bg /nix/store/0fyncbqx6drz6bbd9vr2r519hk9wvkfg-sway-0.15.2/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+# Thinkpad screen is eDP-1 so matches wildcard
 output * bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
+# Desktop 4k monitor is DP-1 so matches below for hidpi scaling
+output DP-1 scale 2 bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
