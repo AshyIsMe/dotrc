@@ -27,7 +27,8 @@ set $menu dmenu_run -l 15
 # Thinkpad screen is eDP-1 so matches wildcard
 output * bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
 # Desktop 4k monitor is DP-1 so matches below for hidpi scaling
-output DP-1 scale 2 bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
+# Disabled for now - XWayland clients go blurry (including firefox and chromium for now...)
+#output DP-1 scale 2 bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -37,7 +38,8 @@ output DP-1 scale 2 bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fi
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 12
 
 ### Input configuration
 #
@@ -95,8 +97,11 @@ input "2652:34050:Convertible_2_TKL_Keyboard" {
     bindsym $mod+Escape exec swaylock -i ~/Pictures/dscovr_transit.png -c 000000
 
 
-    bindsym Print exec swaygrab "~/Pictures/Screenshots/Screenshot_$(date +%Y-5m%d_%H%M%S).png"
-    bindsym $mod+Print exec swaygrab -f "~/Pictures/Screenshots/Screenshot_$(date +%Y-5m%d_%H%M%S).png"
+    #bindsym Print exec swaygrab "~/Pictures/Screenshots/Screenshot_$(date +%Y-5m%d_%H%M%S).png"
+    #bindsym $mod+Print exec swaygrab -f "~/Pictures/Screenshots/Screenshot_$(date +%Y-5m%d_%H%M%S).png"
+    bindsym Print exec grim $HOME/Pictures/Screenshots/$(date +'Screenshot-%Y%m%d-%H%M%S.png')
+    bindsym $mod+Print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'Screenshot-%Y%m%d-%H%M%S.png')
+
 
     # Media keys
     bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 5
