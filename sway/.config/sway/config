@@ -19,6 +19,8 @@ set $term terminator
 # Your preferred application launcher
 set $menu dmenu_run -l 15
 
+set $swaylock 'swaylock -i ~/Pictures/dscovr_transit.png -c 000000'
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /nix/store/0fyncbqx6drz6bbd9vr2r519hk9wvkfg-sway-0.15.2/share/backgrounds/sway/)
@@ -94,7 +96,8 @@ input "2652:34050:Convertible_2_TKL_Keyboard" {
     bindsym $mod+space exec "rofi -show-icons -combi-modi window,drun -show combi -modi combi"
 
 
-    bindsym $mod+Escape exec swaylock -i ~/Pictures/dscovr_transit.png -c 000000
+    #bindsym $mod+Escape exec swaylock -i ~/Pictures/dscovr_transit.png -c 000000
+    bindsym $mod+Escape exec $swaylock
 
 
     #bindsym Print exec swaygrab "~/Pictures/Screenshots/Screenshot_$(date +%Y-5m%d_%H%M%S).png"
@@ -264,5 +267,11 @@ bar {
 # Start some apps
 
 exec --no-startup-id syncthing-gtk
+
+exec swayidle \
+    timeout 300 'swaylock -i ~/Pictures/dscovr_transit.png -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+       resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -i ~/Pictures/dscovr_transit.png -c 000000'
 
 include /nix/store/0fyncbqx6drz6bbd9vr2r519hk9wvkfg-sway-0.15.2/etc/sway/config.d/*
