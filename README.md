@@ -39,4 +39,10 @@ git commit -m "Added some vim plugin"
 # Removing old plugins
 git rm ./vim/.vim/bundle/SomeOldPlugin
 git commit -m "Aaaand it's gone."
+
+# Updating all submodules from upstream
+git submodule update --recursive --remote
+
+# Updating all submodules to what's checked in dotrc
+git submodule update --recursive
 ```
