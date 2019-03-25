@@ -115,3 +115,6 @@
 [submodule "dotvim/bundle/ale"]
 	path = vim/.vim/bundle/ale
 	url = https://github.com/w0rp/ale
+[submodule "vim/.vim/bundle/rust.vim"]
+	path = vim/.vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim
