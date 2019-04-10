@@ -130,12 +130,15 @@ nnoremap <Leader>w :update<CR>
 " Stolen from here: http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 vmap <Leader>y "*y
 vmap <Leader>d "*d
-nmap <Leader>p "*p
-nmap <Leader>P "*P
+"nmap <Leader>p "*p
+"nmap <Leader>P "*P
+nnoremap <Leader>p :set paste <bar> :normal "*p <bar> :set nopaste <CR>
+nnoremap <Leader>P :set paste <bar> :normal "*P <bar> :set nopaste <CR>
 vmap <Leader>p "*p
 vmap <Leader>P "*P
 "Clashes with this unfortunately
 "nnoremap <leader>p :set paste!<CR>:set paste?<CR>
+
 
 "" vimux mappings
 "map <Leader>vp :VimuxPromptCommand<CR>
