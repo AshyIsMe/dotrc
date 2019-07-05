@@ -22,6 +22,7 @@ set $term terminator
 set $menu dmenu_run -l 15
 
 set $swaylock 'swaylock -i ~/Pictures/dscovr_transit.png -c 000000'
+#set $swaylock 'swaylock -i ~/Pictures/amazingbird.jpg -c 000000'
 
 ### Output configuration
 #
@@ -45,8 +46,8 @@ output DP-2 position 3840,0 bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x108
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-font pango:DejaVu Sans Mono 12
+font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 12
 
 ### Input configuration
 #
@@ -269,8 +270,10 @@ bar {
 
 exec --no-startup-id syncthing-gtk
 
+exec redshift -l -33:151 -m wayland
+
 exec swayidle \
-    timeout 300 'swaylock -i ~/Pictures/dscovr_transit.png -c 000000' \
+    timeout 600 'swaylock -i ~/Pictures/dscovr_transit.png -c 000000' \
     timeout 600 'swaymsg "output * dpms off"' \
        resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -i ~/Pictures/dscovr_transit.png -c 000000'
