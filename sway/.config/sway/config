@@ -16,6 +16,8 @@ set $right l
 # Your preferred terminal emulator
 #set $term urxvt
 set $term terminator
+#set $term gnome-terminal
+#set $term konsole
 # Your preferred application launcher
 set $menu dmenu_run -l 15
 
@@ -32,6 +34,9 @@ output * bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
 # Desktop 4k monitor is DP-1 so matches below for hidpi scaling
 # Disabled for now - XWayland clients go blurry (including firefox and chromium for now...)
 #output DP-1 scale 2 bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
+#output DP-2 transform 90 anticlockwise bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
+output DP-1 position 0,0 bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
+output DP-2 position 3840,0 bg /home/aaron/Pictures/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -61,23 +66,19 @@ font pango:DejaVu Sans Mono 8
 # See `man 7 xkeyboard-config` for options you can use with the xkb_layout, xkb_model, xkb_options, xkb_rules, and xkb_variant commands.
 # Capslock is the best key when it's actually Esc when tapped *and* Ctrl when chorded
 # I'm now using caps2esc to achieve this at a lower level than xorg/wayland (so no more xcape needed)
-input "1:1:AT_Translated_Set_2_keyboard" {
+# input "1:1:AT_Translated_Set_2_keyboard" {
+# input "1204:4621:Convertible_2_TKL" { # Filco minila usb mode
+# input "2652:34050:Convertible_2_TKL_Keyboard" { # Filco minila bluetooth mode
+input "*" {
     #xkb_options ctrl:nocaps # Capslock is actually ctrl
-    xkb_layout dvorak
-}
-input "2:7:SynPS/2_Synaptics_TouchPad" {
+
+# input "2:7:SynPS/2_Synaptics_TouchPad" {
   dwt enabled
   tap enabled
   middle_emulation enabled
-}
+# }
 
-# Filco minila usb mode
-input "1204:4621:Convertible_2_TKL" {
-    xkb_layout dvorak
-}
-# Filco minila bluetooth mode
-input "2652:34050:Convertible_2_TKL_Keyboard" {
-    xkb_layout dvorak
+  xkb_layout dvorak
 }
 
 ### Key bindings
