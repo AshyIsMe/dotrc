@@ -199,7 +199,8 @@ nnoremap <Leader>sv :source ~/dotrc/vimrc<CR>
 " TODO: MRU plugin
 ":History is a cheap replacement for MRU
 " TODO :Ag hotkey.  Change to use only git files
-nnoremap <Leader>a :Ag<CR>
+"nnoremap <Leader>a :Ag<CR>
+nnoremap <Leader>a :Rg<CR>
 nnoremap <Leader>e :Files<CR>
 nnoremap <Leader>ff :Locate ~<CR>
 nnoremap <Leader>fg :GitFiles<CR>
