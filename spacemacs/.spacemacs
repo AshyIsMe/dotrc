@@ -32,40 +32,34 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
-     html
-     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     (elfeed :variables rmh-elfeed-org-files (list "~/Sync/orgmode/rssfeeds.org"))
+     (org :variables org-enable-bootstrap-support t)
+     ;; (fzf :location (recipe :fetcher github :repo "AshyIsMe/fzf-spacemacs-layer"))
+     ;; fzf
+     ;; haskell
      ;; helm
-     ivy
-
-     lsp
-
+     ;; lsp
+     ;; notmuch ;;AA TODO - notmuch mail proper integration
+     ;; ox-twbs ;;AA TODO - bootstrap orgmode exporting
+     ;; spell-checking
      auto-completion
      better-defaults
      emacs-lisp
      git
-     ;; haskell
+     html
+     ivy
      markdown
-     (org :variables
-          org-enable-bootstrap-support t)
-     ;; ox-twbs ;;AA TODO - bootstrap orgmode exporting
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     python
+     rust
      shell
-     ;; spell-checking
      syntax-checking
      version-control
-     ;; notmuch ;;AA TODO - notmuch mail proper integration
-     ;; fzf
-     ;; (fzf :location (recipe :fetcher github :repo "AshyIsMe/fzf-spacemacs-layer"))
-     (elfeed :variables
-             rmh-elfeed-org-files (list "~/Sync/orgmode/rssfeeds.org"))
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -75,6 +69,8 @@ values."
    '( ox-twbs
       ;; fzf
       ;; (fzf :location (recipe :fetcher github :repo "AshyIsMe/fzf.el"))
+      zenburn-theme
+      gruvbox-theme
       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -155,7 +151,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 18
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -262,6 +258,7 @@ values."
    dotspacemacs-show-transient-state-title t
    ;; If non nil show the color guide hint for transient state keys. (default t)
    dotspacemacs-show-transient-state-color-guide t
+   dotspacemacs-mode-line-theme 'spacemacs
    ;; If non nil unicode symbols are displayed in the mode line. (default t)
    dotspacemacs-mode-line-unicode-symbols t
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
@@ -281,7 +278,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -335,6 +332,8 @@ you should place your code here."
   ;; (spacemacs/set-leader-keys "l" 'evil-search-highlight-persist-remove-all)
   (global-set-key (kbd "C-l") 'evil-search-highlight-persist-remove-all)
   (setq helm-mode-fuzzy-match t)
+
+  (setq rust-format-on-save t)
 
   ;; Orgmode setup
   (setq org-directory "~/Sync/orgmode")
@@ -408,3 +407,24 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   (quote
+    (twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme kaolin-themes jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme eziam-theme exotica-theme espresso-theme dracula-theme doom-themes django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme chocolate-theme autothemer cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help helm-pydoc yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode company-anaconda anaconda-mode pythonic helm-rg wgrep smex ivy-hydra counsel-projectile counsel swiper ivy elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet elfeed unfill mwim powerline spinner hydra parent-mode projectile request pkg-info epl flx highlight transient lv smartparens iedit anzu evil goto-chg undo-tree f s bind-map bind-key packed avy async popup ox-twbs org-category-capture alert log4e gntp markdown-mode gitignore-mode fringe-helper git-gutter+ git-gutter pos-tip magit-popup git-commit with-editor ghc haskell-mode auto-complete flycheck yasnippet company helm helm-core org-plus-contrib magit ghub dash fzf web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data yaml-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline smeargle restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file notmuch neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative link-hint intero indent-guide hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnus-alias gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flycheck-pos-tip flycheck-haskell flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish diff-hl define-word company-statistics company-ghci company-ghc company-cabal column-enforce-mode cmm-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
