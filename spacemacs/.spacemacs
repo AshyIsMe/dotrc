@@ -364,6 +364,7 @@ you should place your code here."
                   ("p" "Phone call" entry (file "~/Sync/orgmode/notes.org")
                   "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
                   ("w" "Worklog" entry (file+olp+datetree "~/Sync/orgmode/worklog.org"))
+                  ("W" "Worklog" entry (file+olp+datetree "~/Sync/orgmode/worklog.org") "" :time-prompt t)
                   )))
 
     (setq org-todo-state-tags-triggers
