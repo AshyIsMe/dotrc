@@ -72,3 +72,7 @@ export PATH=~/.local/bin:$PATH
 
 #source ~/bin/z-repos/z.sh
 source ~/bin/z/z.sh
+
+
+alias gotop='echo "use ytop!"'
+
