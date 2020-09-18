@@ -331,6 +331,18 @@ augroup END
 autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab
 "augroup END
 
+" j (apl) {{{2
+
+
+let g:reply_repls = {
+\   'j': [
+\     {-> reply#repl#base('jconsole', {
+\       'prompt_start' : '^    ',
+\       'prompt_continue' : v:null,
+\     })}
+\   ],
+\ }
+
 " finally {{{2
 " Not sure if this actually has to be last
 set foldlevelstart=10

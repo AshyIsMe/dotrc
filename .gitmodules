@@ -118,3 +118,6 @@
 [submodule "vim/.vim/bundle/rust.vim"]
 	path = vim/.vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "vim/.vim/bundle/reply.vim"]
+	path = vim/.vim/bundle/reply.vim
+	url = https://github.com/rhysd/reply.vim
