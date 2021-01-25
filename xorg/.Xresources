@@ -1,5 +1,6 @@
 
 ! Colours
+xterm*termName: xterm-256color
 xterm*background: Black
 xterm*foreground: grey
 
