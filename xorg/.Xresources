@@ -30,3 +30,12 @@ xterm*VT100.Translations: #override \
     Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
     Alt <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
+
+! Not sure if this is possible yet
+! Ctrl Shift <Key>U: dump-html(); exec-formatted("xdg-open $(rofi-one-liner-goes-here)", PRIMARY)
+
+! Dunno what key to bind this too
+! Rofi url picker
+! Need to trigger the dump-html() feature
+! And then somehow run this:
+! xdg-open $(grep -oE '(ftp|https)://[^\s<>]*' ~/xterm.<datetime>.xhtml | rofi -dmenu)
