@@ -29,13 +29,24 @@ xterm*VT100.Translations: #override \
     Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
-    Alt <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
+    Ctrl Shift <Key>N:    exec-formatted("xterm '%s'", word) \n\
+    Ctrl Shift <Key>T:    dump-html() exec-formatted("~/xterm-url-picker.sh '%s'", word) \n\
+    Alt <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
+    Alt <Btn3Up>: dump-html() exec-formatted("xdg-open '%t'", PRIMARY) \n
 
-! Not sure if this is possible yet
-! Ctrl Shift <Key>U: dump-html(); exec-formatted("xdg-open $(rofi-one-liner-goes-here)", PRIMARY)
+!
+! Ctrl Shift <Key>N above does not work for some reason, should launch a new xterm
 
-! Dunno what key to bind this too
-! Rofi url picker
-! Need to trigger the dump-html() feature
-! And then somehow run this:
-! xdg-open $(grep -oE '(ftp|https)://[^\s<>]*' ~/xterm.<datetime>.xhtml | rofi -dmenu)
+! Ctrl Shift <Key>T above does not work for some reason
+! It should launch rofi via ~/xterm-url-picker.sh. 
+! It *does* successfully dump-html() and then rofi works if ~/xterm-url-picker.sh is run manually.
+!
+
+! Couldnt get it to work as a one liner either
+!Ctrl Shift <Key>T:    dump-html() exec-formatted("xdg-open $(grep -oE '(http|https)://[a-zA-Z0-9./?=_%%:-]*' ~/xterm.*.xhtml | rofi -dmenu)", PRIMARY) \n\
+
+
+! ~/xterm-url-picker.sh contents:
+! #!/usr/bin/env bash
+! xdg-open $(grep -hoE '(http|https)://[a-zA-Z0-9./?=_%:-]*' ~/xterm.*.xhtml | rofi -dmenu)
+
