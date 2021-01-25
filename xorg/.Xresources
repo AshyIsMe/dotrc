@@ -29,28 +29,15 @@ xterm*VT100.Translations: #override \
     Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
-    Ctrl Shift <Key>T:    dump-html() exec-formatted("/home/aaron/xterm-url-picker.sh '%t'", PRIMARY) \n\
+    Ctrl Shift <Key>N:    exec-formatted("bash -c 'xterm' ", PRIMARY) \n\
+    Ctrl Shift <Key>T:    dump-html() exec-formatted("bash -c '~/xterm-url-picker.sh'", PRIMARY) \n\
     Alt <Btn1Up>:   exec-formatted("xdg-open '%t'", PRIMARY) \n
 
+! TODO: Can we make 'Alt <Btn1Up>' actually select the url for us?
+! Currently you have to manually select it first: ie. double click url, alt-click to launch it
 
 
-!    Ctrl Shift <Key>T:    dump-html() exec-formatted("rofi -dmenu '%t'", PRIMARY) \n\  ! Successfully launches rofi (but empty list)
-!    Ctrl Shift <Key>T:    dump-html() exec-formatted("ls | rofi -dmenu '%t'", PRIMARY) \n\  ! Does NOT launch rofi
-!    Pipe within exec-formatted() does not work.
-!    Shell expansion does not work. ie. ~ and $HOME are not expanded.
-
-
-!
-! Ctrl Shift <Key>N above does not work for some reason, should launch a new xterm
-
-
-! Couldnt get it to work as a one liner though
-!Ctrl Shift <Key>T:    dump-html() exec-formatted("xdg-open $(grep -oE '(http|https)://[a-zA-Z0-9./?=_%%:-]*' ~/xterm.*.xhtml | rofi -dmenu)", PRIMARY) \n\
-!Ctrl Shift <Key>T:    dump-html() exec-formatted("grep -oE '(http|https)://[a-zA-Z0-9./?=_%%:-]*' /home/aaron/xterm.*.xhtml | rofi -dmenu | xargs xdg-open", PRIMARY) \n\
-
-
-! ~/xterm-url-picker.sh contents:
+! $ cat ~/xterm-url-picker.sh
 ! #!/usr/bin/env bash
 ! xdg-open $(grep -hoE '(http|https)://[a-zA-Z0-9./?=_%:-]*' ~/xterm.*.xhtml | rofi -dmenu)
 ! rm ~/xterm.*.xhtml
-
