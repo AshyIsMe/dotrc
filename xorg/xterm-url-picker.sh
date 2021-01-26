@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-xdg-open $(grep -hoE '(http|https)://[a-zA-Z0-9./?=_%:-]*' ~/xterm.*.xhtml | rofi -dmenu)
+# Cut off the w3c header urls with sed
+xdg-open $(sed 1,5d ~/xterm.*.xhtml | grep -hoE '(http|https)://[a-zA-Z0-9./?=_%:-]*' | rofi -dmenu)
 rm ~/xterm.*.xhtml
