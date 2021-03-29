@@ -85,9 +85,6 @@
 [submodule "dotvim/bundle/fzf"]
 	path = vim/.vim/bundle/fzf
 	url = https://github.com/junegunn/fzf
-[submodule "dotvim/bundle/vim-fsharp"]
-	path = vim/.vim/bundle/vim-fsharp
-	url = https://github.com/fsharp/vim-fsharp
 [submodule "dotvim/bundle/vim-orgmode"]
 	path = vim/.vim/bundle/vim-orgmode
 	url = https://github.com/jceb/vim-orgmode
