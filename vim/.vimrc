@@ -87,7 +87,7 @@ function! ToBuffer(cmd)
 endfunction
 command! -nargs=+ -complete=command ToBuffer call ToBuffer(<q-args>)
 
-command! -complete=command ShowMap call ToBuffer(":map")
+"command! -complete=command ShowMap call ToBuffer(":map")
 
 
 " Section: Mappings {{{1
@@ -336,12 +336,15 @@ autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 ex
 
 let g:reply_repls = {
 \   'j': [
-\     {-> reply#repl#base('jconsole', {
+\     {-> reply#repl#base('ijconsole', {
 \       'prompt_start' : '^    ',
 \       'prompt_continue' : v:null,
 \     })}
 \   ],
 \ }
+
+nnoremap <leader><CR> :ReplSend<CR>
+vnoremap <leader><CR> :ReplSend<CR>
 
 " finally {{{2
 " Not sure if this actually has to be last
