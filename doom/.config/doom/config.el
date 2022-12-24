@@ -26,6 +26,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+;;(setq doom-theme 'plan9)
 (setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -44,10 +45,27 @@
                 ("W" "Worklog" entry (file+olp+datetree "~/Sync/orgmode/worklog.org") "" :time-prompt t)
                 )))
 
+;; Configure Babel to support extra languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((dot        . t)
+   (emacs-lisp . t)
+   (org        . t)
+   (python     . t)))
+   ;(haskell    . t)
+   ;(perl       . t)
+   ;(R          . t)
+   ;(ruby       . t)
+   ;(sh         . t)
+   ;(sqlite     . t)))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+
+;; (use-package! j-mode) ; No need for this! just (package! j-mode) in packages.el
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
